@@ -1,0 +1,1901 @@
+--3.1 )Print the name, club, and country name of all midfielder players whose country is 'USA'.
+ Select Name, Club,Country 
+ From Players 
+ where Position Like '%''Midfielder''%'
+ AND
+ Country like '%''USA''%';;
+
+
+NAME                                     CLUB                           COUNTRY                       
+---------------------------------------- ------------------------------ ------------------------------
+'ALEJANDRO BEDOYA'                       'FC Nantes'                    'USA'                         
+'BRAD DAVIS'                             'Houston Dynamo'               'USA'                         
+'GRAHAM ZUSI'                            'Sporting Kansas City'         'USA'                         
+'JERMAINE JONES'                         'Besiktas JK'                  'USA'                         
+'JULIAN GREEN'                           'FC Bayern Muenchen'           'USA'                         
+'KYLE BECKERMAN'                         'Real Salt Lake'               'USA'                         
+'MICHAEL BRADLEY'                        'Toronto FC'                   'USA'                         
+'MIX DISKERUD'                           'Rosenborg BK'                 'USA'                         
+
+8 rows selected. 
+
+
+--3.2) Print the name, club, country and age of captains of each country participating in the 2014 world cup (this database)
+
+Select Name, Club,Country,(SYSDATE-TO_DATE(DOB,'YYYY-MM-DD'))/365.25 as age_of_captain 
+From Players
+WHERE IS_CAPTAIN ='TRUE' ;
+
+NAME                                     CLUB                                   
+---------------------------------------- ------------------------------         
+COUNTRY              AGE_OF_CAPTAIN                                             
+-------------------- --------------                                             
+ANTONIO VALENCIA                         Manchester United FC                   
+Ecuador                  33.5959201                                             
+                                                                                
+ASAMOAH GYAN                             Al Ain FC                              
+Ghana                    33.2947565                                             
+                                                                                
+BRYAN RUIZ                               PSV Eindhoven                          
+Costa Rica               33.5575902                                             
+                                                                                
+
+NAME                                     CLUB                                   
+---------------------------------------- ------------------------------         
+COUNTRY              AGE_OF_CAPTAIN                                             
+-------------------- --------------                                             
+CLAUDIO BRAVO                            Real Sociedad                          
+Chile                    35.9066662                                             
+                                                                                
+CLINT DEMPSEY                            Seattle Sounders FC                    
+USA                      36.0024909                                             
+                                                                                
+CRISTIANO RONALDO                        Real Madrid CF                         
+Portugal                 34.0887332                                             
+                                                                                
+
+NAME                                     CLUB                                   
+---------------------------------------- ------------------------------         
+COUNTRY              AGE_OF_CAPTAIN                                             
+-------------------- --------------                                             
+DARIJO SRNA                              Shakhtar Donetsk                       
+Croatia                  36.8567004                                             
+                                                                                
+DIDIER DROGBA                            Galatasaray SK                         
+Ivory Coast              40.9963308                                             
+                                                                                
+DIEGO LUGANO                             West Bromwich Albion FC                
+Uruguay                  38.3488291                                             
+                                                                                
+
+NAME                                     CLUB                                   
+---------------------------------------- ------------------------------         
+COUNTRY              AGE_OF_CAPTAIN                                             
+-------------------- --------------                                             
+EMIR SPAHIC                              Bayer 04 Leverkusen                    
+Bosnia & Herzegovina     38.5569057                                             
+                                                                                
+GEORGIOS KARAGOUNIS                      Fulham FC                              
+Greece                   42.0093356                                             
+                                                                                
+GIANLUIGI BUFFON                         Juventus FC                            
+Italy                    41.1113205                                             
+                                                                                
+
+NAME                                     CLUB                                   
+---------------------------------------- ------------------------------         
+COUNTRY              AGE_OF_CAPTAIN                                             
+-------------------- --------------                                             
+GOKHAN INLER                             SSC Napoli                             
+Switzerland               34.699274                                             
+                                                                                
+HUGO LLORIS                              Tottenham Hotspur FC                   
+France                    32.202354                                             
+                                                                                
+IKER CASILLAS                            Real Madrid CF                         
+Spain                    37.8039968                                             
+                                                                                
+
+NAME                                     CLUB                                   
+---------------------------------------- ------------------------------         
+COUNTRY              AGE_OF_CAPTAIN                                             
+-------------------- --------------                                             
+JAVAD NEKOUNAM                           Kuwait SC                              
+Iran                     38.5021487                                             
+                                                                                
+KOO JACHEOL                              FSV Mainz 05                           
+South Korea              30.0285005                                             
+                                                                                
+LIONEL MESSI                             FC Barcelona                           
+Argentina                31.7095409                                             
+                                                                                
+
+NAME                                     CLUB                                   
+---------------------------------------- ------------------------------         
+COUNTRY              AGE_OF_CAPTAIN                                             
+-------------------- --------------                                             
+MADJID BOUGUERRA                         Lekhwiya SC                            
+Algeria                  36.4213821                                             
+                                                                                
+MAKOTO HASEBE                            1. FC Nuernberg                        
+Japan                    35.1400679                                             
+                                                                                
+MARIO YEPES                              Atalanta Bergamo                       
+Columbia                 43.1537572                                             
+                                                                                
+
+NAME                                     CLUB                                   
+---------------------------------------- ------------------------------         
+COUNTRY              AGE_OF_CAPTAIN                                             
+-------------------- --------------                                             
+MILE JEDINAK                             Crystal Palace FC                      
+Australia                34.5979735                                             
+                                                                                
+NOEL VALLADARES                          CD Olimpia                             
+Honduras                 41.8505402                                             
+                                                                                
+PHILIPP LAHM                             FC Bayern Muenchen                     
+Germany                  35.3262418                                             
+                                                                                
+
+NAME                                     CLUB                                   
+---------------------------------------- ------------------------------         
+COUNTRY              AGE_OF_CAPTAIN                                             
+-------------------- --------------                                             
+RAFAEL MARQUEZ                           Club Leon                              
+Mexico                   40.0681994                                             
+                                                                                
+ROBIN VAN PERSIE                         Manchester United FC                   
+Netherlands              35.5918133                                             
+                                                                                
+ROMAN SHIROKOV                           FC Krasnodar                           
+Russia                   37.6753178                                             
+                                                                                
+
+NAME                                     CLUB                                   
+---------------------------------------- ------------------------------         
+COUNTRY              AGE_OF_CAPTAIN                                             
+-------------------- --------------                                             
+SAMUEL ETOO                              Chelsea FC                             
+Cameroon                 37.9983842                                             
+                                                                                
+STEVEN GERRARD                           Liverpool FC                           
+England                  38.7759338                                             
+                                                                                
+THIAGO SILVA                             Paris Saint-Germain FC                 
+Brazil                   34.4610809                                             
+                                                                                
+
+NAME                                     CLUB                                   
+---------------------------------------- ------------------------------         
+COUNTRY              AGE_OF_CAPTAIN                                             
+-------------------- --------------                                             
+VINCENT ENYEAMA                          Lille OSC                              
+Nigeria                  36.5281583                                             
+                                                                                
+VINCENT KOMPANY                          Manchester City FC                     
+Belgium                  32.9141952                                             
+                                                                                
+
+32 rows selected.
+ 
+
+ --3.3)	Retrieve the names of countries participating in the 2014 world cup (this database) that have won the world cup more than twice.
+	Select COUNTRY_NAME  
+	From COUNTRY
+	Where NO_OF_WORLDCUP_WON >2 ;
+ 
+ 
+COUNTRY_NAME                                      
+--------------------------------------------------
+'Brazil'
+'Germany'
+'Italy'
+
+--3.4)	Retrieve the names of countries participating in the 2014 world cup (this database) that have never won the world cup. 
+	Select COUNTRY_NAME 
+	From COUNTRY
+	Where NO_OF_WORLDCUP_WON =0 ;
+
+COUNTRY_NAME                                      
+--------------------------------------------------
+'Algeria'
+'Ghana'
+'Nigeria'
+'Honduras'
+'USA'
+'Chile'
+'Ecuador'
+'Belgium'
+'Croatia'
+'Greece'
+'Netherlands'
+
+COUNTRY_NAME                                      
+--------------------------------------------------
+'Russia'
+'Switzerland'
+'Australia'
+'Japan'
+'Cameroon'
+'Ivory Coast'
+'Costa Rica'
+'Mexico'
+'Columbia'
+'Bosnia & Herzegovina'
+'Portugal'
+
+COUNTRY_NAME                                      
+--------------------------------------------------
+'Iran'
+'South Korea'
+
+24 rows selected. 
+
+
+3.5)	Retrieve the name and country of the player who had neither red cards nor yellow cards in the 2014 world cup.
+Select  Distinct Name,Country  
+From players p,player_card pc   
+Where pc.player_id!=p.player_id;
+
+
+
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'AISSA MANDI'                            'Algeria'                     
+'ALAN PULIDO'                            'Mexico'                      
+'ALEX WILKINSON'                         'Australia'                   
+'ANDREAS SAMARIS'                        'Greece'                      
+'BENEDIKT HOEWEDES'                      'Germany'                     
+'BENOIT ASSOU EKOTTO'                    'Cameroon'                    
+'BETO BASTOS'                            'Portugal'                    
+'CARLOS SALCIDO'                         'Mexico'                      
+'CHRISTIAN BOLANOS'                      'Costa Rica'                  
+'ABEL AGUILAR'                           'Columbia'                    
+'ALAN DZAGOEV'                           'Russia'                      
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'ALBERT ADOMAH'                          'Ghana'                       
+'ALEX OXLADE CHAMBERLAIN'                'England'                     
+'AURELIEN CHEDJOU'                       'Cameroon'                    
+'CAMILO VARGAS'                          'Columbia'                    
+'CESC FABREGAS'                          'Spain'                       
+'CHARLES ITANDJE'                        'Cameroon'                    
+'GONZALO HIGUAIN'                        'Argentina'                   
+'GONZALO JARA'                           'Chile'                       
+'GOTOKU SAKAI'                           'Japan'                       
+'HARIS MEDUNJANIN'                       'Bosnia & Herzegovina'        
+'HARIS SEFEROVIC'                        'Switzerland'                 
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'HENRI BEDIMO'                           'Cameroon'                    
+'HERNANES VIANA LIMA'                    'Brazil'                      
+'HONG JEONGHO'                           'South Korea'                 
+'HUGO ALMEIDA'                           'Portugal'                    
+'HULK DE SOUSA'                          'Brazil'                      
+'IGOR DENISOV'                           'Russia'                      
+'IOANNIS FETFATZIDIS'                    'Greece'                      
+'ISAAC BRIZUELA'                         'Mexico'                      
+'IVAN FRANJIC'                           'Australia'                   
+'IVAN MOCINIC'                           'Croatia'                     
+'JACK WILSHERE'                          'England'                     
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'JASON DAVIDSON'                         'Australia'                   
+'DARYL JANMAAT'                          'Netherlands'                 
+'DEANDRE YEDLIN'                         'USA'                         
+'DONIS ESCOBER'                          'Honduras'                    
+'EBENEZER ODUNLAMI'                      'Nigeria'                     
+'ESTEBAN PAREDES'                        'Chile'                       
+'FERNANDO MUSLERA'                       'Uruguay'                     
+'GERVINHO YAO KOUASSI'                   'Ivory Coast'                 
+'CRISTIAN ZAPATA'                        'Columbia'                    
+'DANIEL OPARE'                           'Ghana'                       
+'DIEGO CALVO'                            'Costa Rica'                  
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'EDGAR SALLI'                            'Cameroon'                    
+'EDISON MENDEZ'                          'Ecuador'                     
+'EUGENE GALEKOVIC'                       'Australia'                   
+'FABRICE OLINGA'                         'Cameroon'                    
+'FERNANDO GAGO'                          'Argentina'                   
+'FRANCISCO RODRIGUEZ'                    'Mexico'                      
+'GEORGIOS TZAVELAS'                      'Greece'                      
+'GIANLUIGI BUFFON'                       'Italy'                       
+'STEFANOS KAPINO'                        'Greece'                      
+'TEOFILO GUTIERREZ'                      'Columbia'                    
+'TIM KRUL'                               'Netherlands'                 
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'WILLIAM CARVALHO'                       'Portugal'                    
+'YOHAN CABAYE'                           'France'                      
+'YOSHITO OKUBO'                          'Japan'                       
+'ZVJEZDAN MISIMOVIC'                     'Bosnia & Herzegovina'        
+'JEAN BEAUSEJOUR'                        'Chile'                       
+'JUANFRAN BELEN'                         'Spain'                       
+'JUNG SUNGRYONG'                         'South Korea'                 
+'LEROY FER'                              'Netherlands'                 
+'JOHNNY ACOSTA'                          'Costa Rica'                  
+'JOSE VAZQUEZ'                           'Mexico'                      
+'MARCELO BROZOVIC'                       'Croatia'                     
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'MATY RYAN'                              'Australia'                   
+'MEDHI LACEN'                            'Algeria'                     
+'MEHRDAD POOLADI'                        'Iran'                        
+'MIIKO ALBORNOZ'                         'Chile'                       
+'NABIL BENTALEB'                         'Algeria'                     
+'OMAR GONZALEZ'                          'USA'                         
+'PARK CHUYOUNG'                          'South Korea'                 
+'PAUL POGBA'                             'France'                      
+'RASHID SUMAILA'                         'Ghana'                       
+'RODRIGO MUNOZ'                          'Uruguay'                     
+'STEPHAN LICHTSTEINER'                   'Switzerland'                 
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'SYLVAIN GBOHOUO'                        'Ivory Coast'                 
+'VICTOR IBARBO'                          'Columbia'                    
+'WILLIAN DA SILVA'                       'Brazil'                      
+'YANN SOMMER'                            'Switzerland'                 
+'YELTSIN TEJEDA'                         'Costa Rica'                  
+'KLAAS JAN HUNTELAAR'                    'Netherlands'                 
+'KYLE BECKERMAN'                         'USA'                         
+'LOIC FEUDJOU'                           'Cameroon'                    
+'MARCO VERRATTI'                         'Italy'                       
+'MARIO BALOTELLI'                        'Italy'                       
+'MARIO GOETZE'                           'Germany'                     
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'MARTIN DEMICHELIS'                      'Argentina'                   
+'MAYNOR FIGUEROA'                        'Honduras'                    
+'MEHDI MOSTEFA'                          'Algeria'                     
+'MICHAEL BABATUNDE'                      'Nigeria'                     
+'MICHAEL LANG'                           'Switzerland'                 
+'OGNJEN VRANJES'                         'Bosnia & Herzegovina'        
+'PHIL JAGIELKA'                          'England'                     
+'RAHEEM STERLING'                        'England'                     
+'RYAN MCGOWAN'                           'Australia'                   
+'SALVATORE SIRIGU'                       'Italy'                       
+'SAMUEL INKOOM'                          'Ghana'                       
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'SEBASTIAN COATES'                       'Uruguay'                     
+'SERGIO AGUERO'                          'Argentina'                   
+'SERGIO RAMOS'                           'Spain'                       
+'ADAM TAGGART'                           'Australia'                   
+'ALEXANDER KOKORIN'                      'Russia'                      
+'ALEXANDROS TZIOLIS'                     'Greece'                      
+'ALLAN NYOM'                             'Cameroon'                    
+'ALVARO PEREIRA'                         'Uruguay'                     
+'ANDREY SEMENOV'                         'Russia'                      
+'ANTE REBIC'                             'Croatia'                     
+'ASHKAN DEJAGAH'                         'Iran'                        
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'AXEL WITSEL'                            'Belgium'                     
+'BACARY SAGNA'                           'France'                      
+'AGUSTIN ORION'                          'Argentina'                   
+'ARJEN ROBBEN'                           'Netherlands'                 
+'ATSUTO UCHIDA'                          'Japan'                       
+'BONIEK GARCIA'                          'Honduras'                    
+'BRUNO MARTINS INDI'                     'Netherlands'                 
+'CHRISTIAN ATSU'                         'Ghana'                       
+'GRAHAM ZUSI'                            'USA'                         
+'HA DAESUNG'                             'South Korea'                 
+'HASHEM BEIKZADEH'                       'Iran'                        
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'ISLAM SLIMANI'                          'Algeria'                     
+'IVAN PERISIC'                           'Croatia'                     
+'JACKSON MARTINEZ'                       'Columbia'                    
+'DANI ALVES'                             'Brazil'                      
+'DANIELE DE ROSSI'                       'Italy'                       
+'DIEGO COSTA'                            'Spain'                       
+'DIEGO GODIN'                            'Uruguay'                     
+'DMITRY KOMBAROV'                        'Russia'                      
+'EGIDIO AREVALO'                         'Uruguay'                     
+'EIJI KAWASHIMA'                         'Japan'                       
+'EUGENIO MENA'                           'Chile'                       
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'FABIO COENTRAO'                         'Portugal'                    
+'FAOUZI GHOULAM'                         'Algeria'                     
+'FRED CHAVES GUEDES'                     'Brazil'                      
+'GELSON FERNANDES'                       'Switzerland'                 
+'GIANCARLO GONZALEZ'                     'Costa Rica'                  
+'CRISTIAN GAMBOA'                        'Costa Rica'                  
+'DARIO VIDOSIC'                          'Australia'                   
+'DIRK KUYT'                              'Netherlands'                 
+'EDUARDO CARVALHO'                       'Portugal'                    
+'EFE AMBROSE'                            'Nigeria'                     
+'EMILIO IZAGUIRRE'                       'Honduras'                    
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'ENNER VALENCIA'                         'Ecuador'                     
+'FELIPE GUTIERREZ'                       'Chile'                       
+'GERARD PIQUE'                           'Spain'                       
+'GIOVANI DOS SANTOS'                     'Mexico'                      
+'SHUSAKU NISHIKAWA'                      'Japan'                       
+'TIM CAHILL'                             'Australia'                   
+'TINO SVEN SUSIC'                        'Bosnia & Herzegovina'        
+'VINCENT ABOUBAKAR'                      'Cameroon'                    
+'YUTO NAGATOMO'                          'Japan'                       
+'JERMAINE JONES'                         'USA'                         
+'JOAO MOUTINHO'                          'Portugal'                    
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'JOHNNY HERRERA'                         'Chile'                       
+'JONATHAN MENSAH'                        'Ghana'                       
+'JOZY ALTIDORE'                          'USA'                         
+'JUAN QUINTERO'                          'Columbia'                    
+'JUWON OSHANIWA'                         'Nigeria'                     
+'KEVIN PRINCE BOATENG'                   'Ghana'                       
+'KHOSRO HEYDARI'                         'Iran'                        
+'KONSTANTINOS MANOLAS'                   'Greece'                      
+'LUKA MODRIC'                            'Croatia'                     
+'JAVIER AQUINO'                          'Mexico'                      
+'JOE HART'                               'England'                     
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'MARTIN CACERES'                         'Uruguay'                     
+'MASAHIKO INOHA'                         'Japan'                       
+'MATHIS BOLLY'                           'Ivory Coast'                 
+'MIRALEM PJANIC'                         'Bosnia & Herzegovina'        
+'MOUSSA DEMBELE'                         'Belgium'                     
+'OGENYI ONAZI'                           'Nigeria'                     
+'OUSMANE DIARRASSOUBA'                   'Ivory Coast'                 
+'RAFA SILVA'                             'Portugal'                    
+'RAHMAN AHMADI'                          'Iran'                        
+'RAMIRES SANTOS'                         'Brazil'                      
+'RANDALL BRENES'                         'Costa Rica'                  
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'RETO ZIEGLER'                           'Switzerland'                 
+'RIYAD MAHREZ'                           'Algeria'                     
+'ROMAN SHIROKOV'                         'Russia'                      
+'RON-ROBERT ZIELER'                      'Germany'                     
+'RUI PATRICIO'                           'Portugal'                    
+'SERGIO ROMERO'                          'Argentina'                   
+'STEFAN DE VRIJ'                         'Netherlands'                 
+'TERENCE KONGOLO'                        'Netherlands'                 
+'VASILY BEREZUTSKIY'                     'Russia'                      
+'VICTOR BERNARDEZ'                       'Honduras'                    
+'WALTER GARGANO'                         'Uruguay'                     
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'YOICHIRO KAKITANI'                      'Japan'                       
+'KEYLOR NAVAS'                           'Costa Rica'                  
+'KIM CHANGSOO'                           'South Korea'                 
+'KOLO TOURE'                             'Ivory Coast'                 
+'KWADWO ASAMOAH'                         'Ghana'                       
+'MARVIN CHAVEZ'                          'Honduras'                    
+'MATHEW LECKIE'                          'Australia'                   
+'MATTHEW SPIRANOVIC'                     'Australia'                   
+'MOHAMMED RABIU'                         'Ghana'                       
+'MOUSSA SISSOKO'                         'France'                      
+'OLIVER BOZANIC'                         'Australia'                   
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'OLIVIER GIROUD'                         'France'                      
+'OSMAN CHAVEZ'                           'Honduras'                    
+'PER MERTESACKER'                        'Germany'                     
+'RAPHAEL VARANE'                         'France'                      
+'RAUL ALBIOL'                            'Spain'                       
+'RICARDO ALVAREZ'                        'Argentina'                   
+'RUBEN GABRIEL'                          'Nigeria'                     
+'SAMMIR CRUZ CAMPOS'                     'Croatia'                     
+'ABDELMOUMENE DJABOU'                    'Algeria'                     
+'ALEJANDRO BEDOYA'                       'USA'                         
+'ANDRE AYEW'                             'Ghana'                       
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'ANDREA BARZAGLI'                        'Italy'                       
+'AUSTINE EJIDE'                          'Nigeria'                     
+'BRYAN RUIZ'                             'Costa Rica'                  
+'CARL MEDJANI'                           'Algeria'                     
+'CARLOS GRUEZO'                          'Ecuador'                     
+'CIRO IMMOBILE'                          'Italy'                       
+'ADAM LALLANA'                           'England'                     
+'ALEXANDRE SONG'                         'Cameroon'                    
+'ALEXEY IONOV'                           'Russia'                      
+'ALIREZA JAHAN BAKHSH'                   'Iran'                        
+'BENJAMIN MOUKANDJO'                     'Cameroon'                    
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'BERNARD DUARTE'                         'Brazil'                      
+'CEDRIC DJEUGOUE'                        'Cameroon'                    
+'CONSTANT DJAKPA'                        'Ivory Coast'                 
+'HECTOR HERRERA'                         'Mexico'                      
+'HENRIQUE ADRIANO BUSS'                  'Brazil'                      
+'HOTARU YAMAGUCHI'                       'Japan'                       
+'IGOR AKINFEEV'                          'Russia'                      
+'ISMAEL DIOMANDE'                        'Ivory Coast'                 
+'ISMAEL TIOTE'                           'Ivory Coast'                 
+'IZET HAJROVIC'                          'Bosnia & Herzegovina'        
+'JASMIN FEJZIC'                          'Bosnia & Herzegovina'        
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'CRISTIAN RODRIGUEZ'                     'Uruguay'                     
+'CRISTIANO RONALDO'                      'Portugal'                    
+'DALEY BLIND'                            'Netherlands'                 
+'DANIEL DAVARI'                          'Iran'                        
+'DARIJO SRNA'                            'Croatia'                     
+'DIMITRIOS SALPINGIDIS'                  'Greece'                      
+'DIVOCK ORIGI'                           'Belgium'                     
+'FRICKSON ERAZO'                         'Ecuador'                     
+'DAMARCUS BEASLEY'                       'USA'                         
+'DIEGO LUGANO'                           'Uruguay'                     
+'ERIK DURM'                              'Germany'                     
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'FABIAN JOHNSON'                         'USA'                         
+'FEDERICO FERNANDEZ'                     'Argentina'                   
+'VICTOR FAYZULIN'                        'Russia'                      
+'VINCENT KOMPANY'                        'Belgium'                     
+'WILSON PALACIOS'                        'Honduras'                    
+'JEFFERSON MONTERO'                      'Ecuador'                     
+'JOHN OBI MIKEL'                         'Nigeria'                     
+'JOSEPH YOBO'                            'Nigeria'                     
+'KIM BOKYUNG'                            'South Korea'                 
+'LUIS NETO'                              'Portugal'                    
+'JO SILVA'                               'Brazil'                      
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'JORGE CLAROS'                           'Honduras'                    
+'JORGE VALDIVIA'                         'Chile'                       
+'JOSE MARIA BASANTA'                     'Argentina'                   
+'JOSIP DRMIC'                            'Switzerland'                 
+'JUNIOR DIAZ'                            'Costa Rica'                  
+'MARCO FABIAN'                           'Mexico'                      
+'MARIANO ANDUJAR'                        'Argentina'                   
+'MATEO KOVACIC'                          'Croatia'                     
+'MATTHIAS GINTER'                        'Germany'                     
+'MATTIA PERIN'                           'Italy'                       
+'MAYA YOSHIDA'                           'Japan'                       
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'MICKAEL LANDREAU'                       'France'                      
+'MIGUEL PONCE'                           'Mexico'                      
+'MOHAMED ZEMMAMOUCHE'                    'Algeria'                     
+'NICOLAS LODEIRO'                        'Uruguay'                     
+'PABLO ZABALETA'                         'Argentina'                   
+'ROGER ESPINOZA'                         'Honduras'                    
+'SAMMY BOSSUT'                           'Belgium'                     
+'SAMUEL ETOO'                            'Cameroon'                    
+'SANTI CAZORLA'                          'Spain'                       
+'SERGEY RYZHIKOV'                        'Russia'                      
+'STIPE PLETIKOSA'                        'Croatia'                     
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'THIAGO MOTTA'                           'Italy'                       
+'THOMAS VERMAELEN'                       'Belgium'                     
+'TIM HOWARD'                             'USA'                         
+'TONI KROOS'                             'Germany'                     
+'VEDRAN CORLUKA'                         'Croatia'                     
+'WILFRIED BONY'                          'Ivory Coast'                 
+'LAZAROS CHRISTODOULOPOULOS'             'Greece'                      
+'LORENZO INSIGNE'                        'Italy'                       
+'MARCOS URENA'                           'Costa Rica'                  
+'MARIO MARTINEZ'                         'Honduras'                    
+'MATTIA DE SCIGLIO'                      'Italy'                       
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'MAXWELL ANDRADE'                        'Brazil'                      
+'MIGUEL LAYUN'                           'Mexico'                      
+'NIGEL DE JONG'                          'Netherlands'                 
+'NOEL VALLADARES'                        'Honduras'                    
+'PANAGIOTIS GLYKOS'                      'Greece'                      
+'PEDRO RODRIGUEZ'                        'Spain'                       
+'RAIS MBOLHI'                            'Algeria'                     
+'SAMMY NDJOCK'                           'Cameroon'                    
+'ALEX IBARRA'                            'Ecuador'                     
+'ANEL HADZIC'                            'Bosnia & Herzegovina'        
+'ANTONIO VALENCIA'                       'Ecuador'                     
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'ARTURO VIDAL'                           'Chile'                       
+'BAKHTIAR RAHMANI'                       'Iran'                        
+'CESAR AZPILICUETA'                      'Spain'                       
+'ALESSIO CERCI'                          'Italy'                       
+'ALEXANDER MEJIA'                        'Columbia'                    
+'ALFREDO TALAVERA'                       'Mexico'                      
+'ANDREA PIRLO'                           'Italy'                       
+'BASTIAN SCHWEINSTEIGER'                 'Germany'                     
+'BRAD DAVIS'                             'USA'                         
+'CLAUDIO BRAVO'                          'Chile'                       
+'CRISTHIAN NOBOA'                        'Ecuador'                     
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'GLEN JOHNSON'                           'England'                     
+'GUILLERMO OCHOA'                        'Mexico'                      
+'HELDER POSTIGA'                         'Portugal'                    
+'HIROKI SAKAI'                           'Japan'                       
+'HUGO LLORIS'                            'France'                      
+'JAIMEN AYOVI'                           'Ecuador'                     
+'JAMES MILNER'                           'England'                     
+'JAMES RODRIGUEZ'                        'Columbia'                    
+'JAN VERTONGHEN'                         'Belgium'                     
+'EDIN DZEKO'                             'Bosnia & Herzegovina'        
+'ERIC CHOUPO MOTING'                     'Cameroon'                    
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'EZEQUIEL LAVEZZI'                       'Argentina'                   
+'FIDEL MARTINEZ'                         'Ecuador'                     
+'GEORGIOS SAMARAS'                       'Greece'                      
+'GIORGIO CHIELLINI'                      'Italy'                       
+'DANIEL CAMBRONERO'                      'Costa Rica'                  
+'DANY NOUNKEU'                           'Cameroon'                    
+'DAVID VILLA'                            'Spain'                       
+'EZEQUIEL GARAY'                         'Argentina'                   
+'FRANCK RIBERY'                          'France'                      
+'GABRIEL ACHILIER'                       'Ecuador'                     
+'GASTON RAMIREZ'                         'Uruguay'                     
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'SIMON MIGNOLET'                         'Belgium'                     
+'SOULEYMANE BAMBA'                       'Ivory Coast'                 
+'VALENTIN STOCKER'                       'Switzerland'                 
+'VANGELIS MORAS'                         'Greece'                      
+'VICTOR MOSES'                           'Nigeria'                     
+'WAYLON FRANCIS'                         'Costa Rica'                  
+'YACINE BRAHIMI'                         'Algeria'                     
+'YURY LODYGIN'                           'Russia'                      
+'JOAO ROJAS'                             'Ecuador'                     
+'JOHN BOYE'                              'Ghana'                       
+'JOSE CHOLEVAS'                          'Greece'                      
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'JULIAN GREEN'                           'USA'                         
+'KARIM BENZEMA'                          'France'                      
+'KENNETH OMERUO'                         'Nigeria'                     
+'KOO JACHEOL'                            'South Korea'                 
+'LIONEL MESSI'                           'Argentina'                   
+'LUCAS BIGLIA'                           'Argentina'                   
+'LUIS GARRIDO'                           'Honduras'                    
+'JEAN DANIEL AKPA'                       'Ivory Coast'                 
+'JOEL MATIP'                             'Cameroon'                    
+'JOSE FUENZALIDA'                        'Chile'                       
+'JUAN PAREDES'                           'Ecuador'                     
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'KEVIN DE BRUYNE'                        'Belgium'                     
+'MAURICIO PINILLA'                       'Chile'                       
+'MENSUR MUJDZA'                          'Bosnia & Herzegovina'        
+'MITCH LANGERAK'                         'Australia'                   
+'PAULINHO MACIEL JR.'                    'Brazil'                      
+'SERGIO BUSQUETS'                        'Spain'                       
+'TOBY ALDERWEIRELD'                      'Belgium'                     
+'XABI ALONSO'                            'Spain'                       
+'KI SUNGYUENG'                           'South Korea'                 
+'LUCAS DIGNE'                            'France'                      
+'MANABU SAITO'                           'Japan'                       
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'MARK BRESCIANO'                         'Australia'                   
+'MASATO MORISHIGE'                       'Japan'                       
+'MATHIEU VALBUENA'                       'France'                      
+'MAXIMILIANO PEREIRA'                    'Uruguay'                     
+'MESUT OEZIL'                            'Germany'                     
+'MICHAEL BRADLEY'                        'USA'                         
+'MIROSLAV KLOSE'                         'Germany'                     
+'NICK RIMANDO'                           'USA'                         
+'PEPE FERREIRA'                          'Portugal'                    
+'RICARDO RODRIGUEZ'                      'Switzerland'                 
+'SANTIAGO ARIAS'                         'Columbia'                    
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'SEJAD SALIHOVIC'                        'Bosnia & Herzegovina'        
+'ABEL HERNANDEZ'                         'Uruguay'                     
+'ADRIAN RAMOS'                           'Columbia'                    
+'ALEXANDER SAMEDOV'                      'Russia'                      
+'ANDRANIK TIMOTIAN'                      'Iran'                        
+'ASMIR BEGOVIC'                          'Bosnia & Herzegovina'        
+'BOUBACAR BARRY'                         'Ivory Coast'                 
+'ANDRE SCHUERRLE'                        'Germany'                     
+'ANTHONY VANDEN BORRE'                   'Belgium'                     
+'AZUBUIKE EGWUEKWE'                      'Nigeria'                     
+'GOKHAN INLER'                           'Switzerland'                 
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'HOSSEIN MAHINI'                         'Iran'                        
+'JAMES TROISI'                           'Australia'                   
+'DENIS GLUSHAKOV'                        'Russia'                      
+'EDEN HAZARD'                            'Belgium'                     
+'EDINSON CAVANI'                         'Uruguay'                     
+'EDUARDO DA SILVA'                       'Croatia'                     
+'EMIR SPAHIC'                            'Bosnia & Herzegovina'        
+'ERMIN BICAKCIC'                         'Bosnia & Herzegovina'        
+'FRANK LAMPARD'                          'England'                     
+'DANIEL VAN BUYTEN'                      'Belgium'                     
+'DIDIER DROGBA'                          'Ivory Coast'                 
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'DJAMEL MESBAH'                          'Algeria'                     
+'DRIES MERTENS'                          'Belgium'                     
+'EDDER DELGADO'                          'Honduras'                    
+'EMMANUEL AGYEMANG BADU'                 'Ghana'                       
+'ENZO PEREZ'                             'Argentina'                   
+'FARYD MONDRAGON'                        'Columbia'                    
+'GHASEM HADADIFAR'                       'Iran'                        
+'SOKRATIS PAPASTATHOPOULOS'              'Greece'                      
+'THEOFANIS GEKAS'                        'Greece'                      
+'THIAGO SILVA'                           'Brazil'                      
+'THOMAS MUELLER'                         'Germany'                     
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'JAVIER HERNANDEZ'                       'Mexico'                      
+'JORGE FUCILE'                           'Uruguay'                     
+'JOSE CUBERO'                            'Costa Rica'                  
+'JOSE ROJAS'                             'Chile'                       
+'KIM SEUNGGYU'                           'South Korea'                 
+'LAURENT KOSCIELNY'                      'France'                      
+'JORDI ALBA'                             'Spain'                       
+'KEISUKE HONDA'                          'Japan'                       
+'MARIO GAVRANOVIC'                       'Switzerland'                 
+'MARIO MANDZUKIC'                        'Croatia'                     
+'MASOUD SHOJAEI'                         'Iran'                        
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'MATT BESLER'                            'USA'                         
+'MICHAEL BARRANTES'                      'Costa Rica'                  
+'NEYMAR SANTOS JR.'                      'Brazil'                      
+'OLIVER ZELENIKA'                        'Croatia'                     
+'PHIL JONES'                             'England'                     
+'RICARDO COSTA'                          'Portugal'                    
+'RICKIE LAMBERT'                         'England'                     
+'ROSS BARKLEY'                           'England'                     
+'SAPHIR TAIDER'                          'Algeria'                     
+'SENAD LULIC'                            'Bosnia & Herzegovina'        
+'SHINJI OKAZAKI'                         'Japan'                       
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'SHUICHI GONDA'                          'Japan'                       
+'THIBAUT COURTOIS'                       'Belgium'                     
+'TOSHIHIRO AOYAMA'                       'Japan'                       
+'VINCENT ENYEAMA'                        'Nigeria'                     
+'YUYA OSAKO'                             'Japan'                       
+'KONSTANTINOS MITROGLOU'                 'Greece'                      
+'LEE YONG'                               'South Korea'                 
+'LIASSINE CADAMURO'                      'Algeria'                     
+'LUKAS PODOLSKI'                         'Germany'                     
+'MAKSIM KANUNNIKOV'                      'Russia'                      
+'MARCELO DIAZ'                           'Chile'                       
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'MAROUANE FELLAINI'                      'Belgium'                     
+'MILE JEDINAK'                           'Australia'                   
+'MIX DISKERUD'                           'USA'                         
+'NANI DA CUNHA'                          'Portugal'                    
+'NICOLAS LOMBAERTS'                      'Belgium'                     
+'OSCAR DOS SANTOS JR.'                   'Brazil'                      
+'PARK JONGWOO'                           'South Korea'                 
+'PATRICE EVRA'                           'France'                      
+'PIERRE WEBO'                            'Cameroon'                    
+'RAMON AZEEZ'                            'Nigeria'                     
+'SERGEY IGNASHEVICH'                     'Russia'                      
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'ADAM KWARASEY'                          'Ghana'                       
+'ADNAN JANUZAJ'                          'Belgium'                     
+'BEN FOSTER'                             'England'                     
+'BRUNO ALVES'                            'Portugal'                    
+'CEDRIC SI MOHAMMED'                     'Algeria'                     
+'CHRIS WONDOLOWSKI'                      'USA'                         
+'CLINT DEMPSEY'                          'USA'                         
+'AHMED MUSA'                             'Nigeria'                     
+'ALEXANDER DOMINGUEZ'                    'Ecuador'                     
+'AMIRHOSSEIN SADEGHI'                    'Iran'                        
+'ARTHUR BOKA'                            'Ivory Coast'                 
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'ASMIR AVDUKIC'                          'Bosnia & Herzegovina'        
+'BEN HALLORAN'                           'Australia'                   
+'GODFREY OBOABONA'                       'Nigeria'                     
+'HARRISON AFFUL'                         'Ghana'                       
+'HASSAN YEBDA'                           'Algeria'                     
+'HECTOR MORENO'                          'Mexico'                      
+'JALAL HOSSEINI'                         'Iran'                        
+'CRISTHIAN STUANI'                       'Uruguay'                     
+'DANIEL STURRIDGE'                       'England'                     
+'DANIJEL SUBASIC'                        'Croatia'                     
+'DAVID SILVA'                            'Spain'                       
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'GABRIEL PALETTA'                        'Italy'                       
+'DANIJEL PRANJIC'                        'Croatia'                     
+'DANNY WELBECK'                          'England'                     
+'DAVID DE GEA'                           'Spain'                       
+'DEJAN LOVREN'                           'Croatia'                     
+'DIEGO REYES'                            'Mexico'                      
+'EDIN VISCA'                             'Bosnia & Herzegovina'        
+'EHSAN HAJI SAFI'                        'Iran'                        
+'FRASER FORSTER'                         'England'                     
+'GEOFF CAMERON'                          'USA'                         
+'GEORGIOS KARAGOUNIS'                    'Greece'                      
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'SHOLA AMEOBI'                           'Nigeria'                     
+'STEPHANE MBIA'                          'Cameroon'                    
+'SULLEY MUNTARI'                         'Ghana'                       
+'TOMMY OAR'                              'Australia'                   
+'TONI SUNJIC'                            'Bosnia & Herzegovina'        
+'VASILEIOS TOROSIDIS'                    'Greece'                      
+'VEDAD IBISEVIC'                         'Bosnia & Herzegovina'        
+'VICTOR LEANDRO BAGY'                    'Brazil'                      
+'YASUHITO ENDO'                          'Japan'                       
+'JI DONGWON'                             'South Korea'                 
+'JORDAN HENDERSON'                       'England'                     
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'JORGE GUAGUA'                           'Ecuador'                     
+'LEIGHTON BAINES'                        'England'                     
+'LUKE SHAW'                              'England'                     
+'MAMADOU SAKHO'                          'France'                      
+'MANUEL NEUER'                           'Germany'                     
+'JAVIER MASCHERANO'                      'Argentina'                   
+'JERRY PALACIOS'                         'Honduras'                    
+'JOSE CORONA'                            'Mexico'                      
+'KEVIN MIRALLAS'                         'Belgium'                     
+'MARIO YEPES'                            'Columbia'                    
+'MARK MILLIGAN'                          'Australia'                   
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'MICHAEL ARROYO'                         'Ecuador'                     
+'MICHAEL UMANA'                          'Costa Rica'                  
+'MUBARAK WAKASO'                         'Ghana'                       
+'NICOLAS NKOULOU'                        'Cameroon'                    
+'RAUL JIMENEZ'                           'Mexico'                      
+'SAMI KHEDIRA'                           'Germany'                     
+'SEAD KOLASINAC'                         'Bosnia & Herzegovina'        
+'STEPHANE RUFFIER'                       'France'                      
+'STEVE VON BERGEN'                       'Switzerland'                 
+'TRANQUILLO BARNETTA'                    'Switzerland'                 
+'UWA ECHIEJILE'                          'Nigeria'                     
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'VARELA SILVESTRE'                       'Portugal'                    
+'WAYNE ROONEY'                           'England'                     
+'YASUYUKI KONNO'                         'Japan'                       
+'YUN SUKYOUNG'                           'South Korea'                 
+'KIM SHINWOOK'                           'South Korea'                 
+'MADJID BOUGUERRA'                       'Algeria'                     
+'MAJEED WARIS'                           'Ghana'                       
+'MARCO PAROLO'                           'Italy'                       
+'MASSIMO LUONGO'                         'Australia'                   
+'MATT MCKAY'                             'Australia'                   
+'MAURICIO ISLA'                          'Chile'                       
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'OKECHUKWU UCHEBO'                       'Nigeria'                     
+'OSCAR DUARTE'                           'Costa Rica'                  
+'PAUL VERHAEGH'                          'Netherlands'                 
+'ROMAN BUERKI'                           'Switzerland'                 
+'RON VLAAR'                              'Netherlands'                 
+'SENIJAD IBRICIC'                        'Bosnia & Herzegovina'        
+'ANDRES INIESTA'                         'Spain'                       
+'ANTOINE GRIEZMANN'                      'France'                      
+'ANTONIO CANDREVA'                       'Italy'                       
+'AUGUSTO FERNANDEZ'                      'Argentina'                   
+'BRAD GUZAN'                             'USA'                         
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'CARLOS BACCA'                           'Columbia'                    
+'CARLOS VALDES'                          'Columbia'                    
+'CLAUDIO MARCHISIO'                      'Italy'                       
+'ACQUAH AFRIYIE'                         'Ghana'                       
+'ADRIAN BONE'                            'Ecuador'                     
+'ALVARO GONZALEZ'                        'Uruguay'                     
+'ANDREY ESHCHENKO'                       'Russia'                      
+'ANDY NAJAR'                             'Honduras'                    
+'ANGEL DI MARIA'                         'Argentina'                   
+'ANTONIO CASSANO'                        'Italy'                       
+'ASAMOAH GYAN'                           'Ghana'                       
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'BAILEY WRIGHT'                          'Australia'                   
+'BRAYAN BECKELES'                        'Honduras'                    
+'CARLO COSTLY'                           'Honduras'                    
+'CARLOS CARMONA'                         'Chile'                       
+'CARLOS PENA'                            'Mexico'                      
+'CARLOS SANCHEZ'                         'Columbia'                    
+'CELSO BORGES'                           'Costa Rica'                  
+'CHRISTOPH KRAMER'                       'Germany'                     
+'GORDON SCHILDENFELD'                    'Croatia'                     
+'HAN KOOKYOUNG'                          'South Korea'                 
+'HEINER MORA'                            'Costa Rica'                  
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'HIROSHI KIYOTAKE'                       'Japan'                       
+'HUGO CAMPAGNARO'                        'Argentina'                   
+'IKER CASILLAS'                          'Spain'                       
+'IOANNIS MANIATIS'                       'Greece'                      
+'IVAN RAKITIC'                           'Croatia'                     
+'IVICA OLIC'                             'Croatia'                     
+'JASPER CILLESSEN'                       'Netherlands'                 
+'JAVAD NEKOUNAM'                         'Iran'                        
+'DANTE SANTOS'                           'Brazil'                      
+'DAVID LUIZ'                             'Brazil'                      
+'DIDIER ZOKORA'                          'Ivory Coast'                 
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'EDER BALANTA'                           'Columbia'                    
+'ELIAQUIM MANGALA'                       'France'                      
+'EMMANUEL EMENIKE'                       'Nigeria'                     
+'ENOH EYONG'                             'Cameroon'                    
+'FELIPE CAICEDO'                         'Ecuador'                     
+'FERNANDINHO LUIZ ROZA'                  'Brazil'                      
+'FRANCISCO SILVA'                        'Chile'                       
+'GARY MEDEL'                             'Chile'                       
+'GEORGINIO WIJNALDUM'                    'Netherlands'                 
+'DAVID OSPINA'                           'Columbia'                    
+'DIE SEREY'                              'Ivory Coast'                 
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'EDER LOPES'                             'Portugal'                    
+'EL ARABI SOUDANI'                       'Algeria'                     
+'ESSEID BELKALEM'                        'Algeria'                     
+'FREDY GUARIN'                           'Columbia'                    
+'GARY CAHILL'                            'England'                     
+'STEPHEN ADAMS'                          'Ghana'                       
+'STEVEN BEITASHOUR'                      'Iran'                        
+'STEVEN GERRARD'                         'England'                     
+'WALTER AYOVI'                           'Ecuador'                     
+'YAYA TOURE'                             'Ivory Coast'                 
+'JAVI MARTINEZ'                          'Spain'                       
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'JORDY CLASIE'                           'Netherlands'                 
+'JUAN CUADRADO'                          'Columbia'                    
+'KIM YOUNGGWON'                          'South Korea'                 
+'KOKE MERODIO'                           'Spain'                       
+'KONAN YA'                               'Ivory Coast'                 
+'KWAK TAEHWI'                            'South Korea'                 
+'LANDRY NGUEMO'                          'Cameroon'                    
+'LEE KEUNHO'                             'South Korea'                 
+'LOUKAS VYNTRA'                          'Greece'                      
+'LUIS SUAREZ'                            'Uruguay'                     
+'MAICON SISENANDO'                       'Brazil'                      
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'JEREMAIN LENS'                          'Netherlands'                 
+'JEROME BOATENG'                         'Germany'                     
+'JOAO PEREIRA'                           'Portugal'                    
+'JOHN BROOKS'                            'USA'                         
+'JONATHAN DE GUZMAN'                     'Netherlands'                 
+'JUAN ZUNIGA'                            'Columbia'                    
+'KARIM ANSARI FARD'                      'Iran'                        
+'MARCO REUS'                             'Germany'                     
+'MARCOS ROJO'                            'Argentina'                   
+'MARTIN SILVA'                           'Uruguay'                     
+'MATTEO DARMIAN'                         'Italy'                       
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'MAXI RODRIGUEZ'                         'Argentina'                   
+'MAXIMO BANGUERA'                        'Ecuador'                     
+'NIKICA JELAVIC'                         'Croatia'                     
+'OLEG SHATOV'                            'Russia'                      
+'ORIBE PERALTA'                          'Mexico'                      
+'OSCAR BAGUI'                            'Ecuador'                     
+'OSCAR GRANADOS'                         'Costa Rica'                  
+'PARK JOOHO'                             'South Korea'                 
+'PEJMAN MONTAZERI'                       'Iran'                        
+'PEPE REINA'                             'Spain'                       
+'PHILIPPE SENDEROS'                      'Switzerland'                 
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'RAFIK HALLICHE'                         'Algeria'                     
+'REZA HAGHIGHI'                          'Iran'                        
+'SERGE AURIER'                           'Ivory Coast'                 
+'SOFIANE FEGHOULI'                       'Algeria'                     
+'STEVEN DEFOUR'                          'Belgium'                     
+'TIMMY CHANDLER'                         'USA'                         
+'VLADIMIR GRANAT'                        'Russia'                      
+'LUIS LOPEZ'                             'Honduras'                    
+'LUIS SARITAMA'                          'Ecuador'                     
+'MATS HUMMELS'                           'Germany'                     
+'MAX GRADEL'                             'Ivory Coast'                 
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'MICHEL VORM'                            'Netherlands'                 
+'MIGUEL VELOSO'                          'Portugal'                    
+'MUHAMED BESIC'                          'Bosnia & Herzegovina'        
+'ORESTIS KARNEZIS'                       'Greece'                      
+'PHILIPP LAHM'                           'Germany'                     
+'RAFAEL MARQUEZ'                         'Mexico'                      
+'RAUL MEIRELES'                          'Portugal'                    
+'REZA GHOOCHANNEJAD'                     'Iran'                        
+'RIO MAVUBA'                             'France'                      
+'RONY MARTINEZ'                          'Honduras'                    
+'SAYOUBA MANDE'                          'Ivory Coast'                 
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'AHMAD ALNAMEH'                          'Iran'                        
+'ALBERTO AQUILANI'                       'Italy'                       
+'ALEKSEI KOZLOV'                         'Russia'                      
+'ALEXIS SANCHEZ'                         'Chile'                       
+'ALIREZA HAGHIGHI'                       'Iran'                        
+'ARON JOHANNSSON'                        'USA'                         
+'BLERIM DZEMAILI'                        'Switzerland'                 
+'CHARLES ARANGUIZ'                       'Chile'                       
+'CHIGOZIE AGBIM'                         'Nigeria'                     
+'ADMIR MEHMEDI'                          'Switzerland'                 
+'ALDO RAMIREZ'                           'Columbia'                    
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'ALEKSANDR KERZHAKOV'                    'Russia'                      
+'ANDRE ALMEIDA'                          'Portugal'                    
+'ANDRES GUARDADO'                        'Mexico'                      
+'AVDIJA VRSAJEVIC'                       'Bosnia & Herzegovina'        
+'BLAISE MATUIDI'                         'France'                      
+'CHRIS SMALLING'                         'England'                     
+'CLEMENT GRENIER'                        'France'                      
+'GRANIT XHAKA'                           'Switzerland'                 
+'HWANG SEOKHO'                           'South Korea'                 
+'IGNAZIO ABATE'                          'Italy'                       
+'JAMES HOLLAND'                          'Australia'                   
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'DIEGO BENAGLIO'                         'Switzerland'                 
+'DIEGO PEREZ'                            'Uruguay'                     
+'EDUARDO VARGAS'                         'Chile'                       
+'FABIAN ORELLANA'                        'Chile'                       
+'FATAWU DAUDA'                           'Ghana'                       
+'GEORGY SHCHENNIKOV'                     'Russia'                      
+'CRISTOPHER TOSELLI'                     'Chile'                       
+'DIEGO FORLAN'                           'Uruguay'                     
+'DOMAGOJ VIDA'                           'Croatia'                     
+'FABIAN SCHAER'                          'Switzerland'                 
+'FERNANDO TORRES'                        'Spain'                       
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'GIOVANNI SIO'                           'Ivory Coast'                 
+'UCHE NWOFOR'                            'Nigeria'                     
+'WESLEY SNEIJDER'                        'Netherlands'                 
+'XAVI HERNANDEZ'                         'Spain'                       
+'JEAN MAKOUN'                            'Cameroon'                    
+'JERRY BENGTSON'                         'Honduras'                    
+'JOEL CAMPBELL'                          'Costa Rica'                  
+'JOEL VELTMAN'                           'Netherlands'                 
+'JOSE GIMENEZ'                           'Uruguay'                     
+'JUAN MONTES'                            'Honduras'                    
+'KEVIN GROSSKREUTZ'                      'Germany'                     
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'LEE BUMYOUNG'                           'South Korea'                 
+'LOIC REMY'                              'France'                      
+'MAKOTO HASEBE'                          'Japan'                       
+'JEFFERSON GALVAO'                       'Brazil'                      
+'JOHAN DJOUROU'                          'Switzerland'                 
+'JORDAN AYEW'                            'Ghana'                       
+'JUAN CARLOS GARCIA'                     'Honduras'                    
+'JUAN MATA'                              'Spain'                       
+'JULIAN DRAXLER'                         'Germany'                     
+'JULIO CESAR'                            'Brazil'                      
+'MATHIEU DEBUCHY'                        'France'                      
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'MICHAEL ESSIEN'                         'Ghana'                       
+'NACER CHADLI'                           'Belgium'                     
+'OGNJEN VUKOJEVIC'                       'Croatia'                     
+'PANAGIOTIS KONE'                        'Greece'                      
+'PATRICK PEMBERTON'                      'Costa Rica'                  
+'PETER ODEMWINGIE'                       'Nigeria'                     
+'ROMELU LUKAKU'                          'Belgium'                     
+'RUBEN AMORIM'                           'Portugal'                    
+'SALOMON KALOU'                          'Ivory Coast'                 
+'SEGUNDO CASTILLO'                       'Ecuador'                     
+'SIME VRSALJKO'                          'Croatia'                     
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'SON HEUNGMIN'                           'South Korea'                 
+'VALON BEHRAMI'                          'Switzerland'                 
+'VIEIRINHA DE FREITAS'                   'Portugal'                    
+'XHERDAN SHAQIRI'                        'Switzerland'                 
+'YURY ZHIRKOV'                           'Russia'                      
+'KONSTANTINOS KATSOURANIS'               'Greece'                      
+'LAURENT CIMAN'                          'Belgium'                     
+'LEE CHUNGYONG'                          'South Korea'                 
+'LEONARDO BONUCCI'                       'Italy'                       
+'LUIZ GUSTAVO'                           'Brazil'                      
+'MARCELO VIEIRA'                         'Brazil'                      
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'MEMPHIS DEPAY'                          'Netherlands'                 
+'NABIL GHILAS'                           'Algeria'                     
+'PABLO ARMERO'                           'Columbia'                    
+'PANAGIOTIS TACHTSIDIS'                  'Greece'                      
+'PAUL AGUILAR'                           'Mexico'                      
+'ROBIN VAN PERSIE'                       'Netherlands'                 
+'RODRIGO PALACIO'                        'Argentina'                   
+'ROMAN WEIDENFELLER'                     'Germany'                     
+'ROY MILLER'                             'Costa Rica'                  
+'SHINJI KAGAWA'                          'Japan'                       
+
+736 rows selected. 
+
+--3.6)	Retrieve the name and country of the players with the most Red cards in the 2014 world cup.
+
+SELECT p.Name,p.Country   
+FROM player_card pc ,Players p
+WHERE red_cards = (SELECT MAX(red_cards) FROM player_card)
+and p.player_id=pc.player_id;
+
+NAME                                     COUNTRY                       
+---------------------------------------- ------------------------------
+'ANTE REBIC'                             'Croatia'                     
+'ANTONIO VALENCIA'                       'Ecuador'                     
+'CLAUDIO MARCHISIO'                      'Italy'                       
+'ALEXANDRE SONG'                         'Cameroon'                    
+'WILSON PALACIOS'                        'Honduras'                    
+'STEVEN DEFOUR'                          'Belgium'                     
+'KONSTANTINOS KATSOURANIS'               'Greece'                      
+'MAXIMILIANO PEREIRA'                    'Uruguay'                     
+'OSCAR DUARTE'                           'Costa Rica'                  
+'PEPE FERREIRA'                          'Portugal'                    
+
+10 rows selected. 
+
+--3.7)	For each Host city, retrieve the HostCity and the total number of games played in that city.
+SELECT
+    Host_city,
+    COUNT(*) number_of_games_played
+FROM
+    match_results
+GROUP BY
+    host_city
+ORDER BY
+    host_city;
+
+HOST_CITY            NUMBER_OF_GAMES_PLAYED
+-------------------- ----------------------
+'Belo Horizonte'                          6
+'Brasilia'                                7
+'Cuiaba'                                  4
+'Curitiba'                                4
+'Fortaleza'                               6
+'Manaus'                                  4
+'Natal'                                   4
+'Porto Alegre'                            5
+'Recife'                                  5
+'Rio De Janerio'                          7
+'Salvador'                                6
+
+HOST_CITY            NUMBER_OF_GAMES_PLAYED
+-------------------- ----------------------
+'Sao Paulo'                               6
+
+12 rows selected. 
+
+--3.8)	Retrieve the names of host city with the most games played in that city.
+ SELECT query1.*
+FROM (SELECT Host_City, Count(*) AS Most_games_played
+      FROM match_results
+      GROUP BY match_results.host_city) query1,
+
+     (SELECT max(query2.most_games_played) AS highest_count
+      FROM (SELECT host_city, Count(*) AS most_games_played
+            FROM match_results
+            GROUP BY match_results.host_city) query2) query3
+WHERE query1.most_games_played = query3.highest_count;	
+
+HOST_CITY            MOST_GAMES_PLAYED
+-------------------- -----------------
+'Brasilia'                           7
+'Rio De Janerio'                     7
+
+
+--3.9) For each country, retrieve the country name and the number of games they played as 
+--Team1 in the MATCH_RESULTS table, and the total goals scored (SUM of Team1_score) 
+--and the goals against (SUM of Team2_score).
+
+  SELECT COUNTRY.Country_Name,
+  count(*) as num_of_games_played, 
+  sum(MATCH_RESULTS.Team1_score) as total_goals_scored ,
+  sum(MATCH_RESULTS.Team2_score) as goals_against 
+  FROM COUNTRY,MATCH_RESULTS
+  WHERE COUNTRY.Country_Name=MATCH_RESULTS.Team1  
+  GROUP BY COUNTRY.Country_Name;
+
+COUNTRY_NAME              NUM_OF_GAMES_PLAYED TOTAL_GOALS_SCORED GOALS_AGAINST
+------------------------- ------------------- ------------------ -------------
+'Spain'                                     2                  1             7
+'Nigeria'                                   2                  3             3
+'Iran'                                      1                  0             0
+'France'                                    3                  5             1
+'Ivory Coast'                               1                  2             1
+'Ecuador'                                   1                  0             0
+'Germany'                                   4                  9             3
+'Switzerland'                               2                  4             6
+'Cameroon'                                  2                  1             8
+'Netherlands'                               4                  4             1
+'Algeria'                                   1                  1             1
+
+COUNTRY_NAME              NUM_OF_GAMES_PLAYED TOTAL_GOALS_SCORED GOALS_AGAINST
+------------------------- ------------------- ------------------ -------------
+'Columbia'                                  3                  7             1
+'Uruguay'                                   2                  3             4
+'Argentina'                                 4                  5             1
+'Brazil'                                    6                  7            13
+'Australia'                                 2                  2             6
+'Italy'                                     2                  0             2
+'Honduras'                                  2                  1             5
+'USA'                                       2                  2             3
+'England'                                   1                  1             2
+'Russia'                                    1                  1             1
+'Costa Rica'                                2                  1             1
+
+COUNTRY_NAME              NUM_OF_GAMES_PLAYED TOTAL_GOALS_SCORED GOALS_AGAINST
+------------------------- ------------------- ------------------ -------------
+'Bosnia & Herzegovina'                      1                  3             1
+'Belgium'                                   3                  5             2
+'South Korea'                               2                  2             5
+'Mexico'                                    1                  1             0
+'Japan'                                     2                  1             4
+'Ghana'                                     1                  1             2
+'Croatia'                                   1                  1             3
+'Greece'                                    1                  2             1
+'Portugal'                                  1                  2             1
+'Chile'                                     1                  3             1
+
+32 rows selected. 
+
+--3.10)	For each country, retrieve the country name and the number 
+--of games they played as Team2 in the MATCH_RESULTS table,
+-- and the total goals scored (SUM of Team12_score) and the goals against (SUM of Team1_score)
+  
+  SELECT COUNTRY.Country_Name,count(*) as num_of_games_played, 
+  SUM(MATCH_RESULTS.Team2_score) as total_goals_scored ,
+  SUM(MATCH_RESULTS.Team1_score) as goals_against 
+  FROM COUNTRY,MATCH_RESULTS 
+  WHERE COUNTRY.Country_Name=MATCH_RESULTS.Team2 
+  GROUP BY COUNTRY.Country_Name;
+
+COUNTRY_NAME              NUM_OF_GAMES_PLAYED TOTAL_GOALS_SCORED GOALS_AGAINST
+------------------------- ------------------- ------------------ -------------
+'Iran'                                      2                  1             4
+'Spain'                                     1                  3             0
+'Nigeria'                                   2                  0             2
+'Ecuador'                                   2                  3             3
+'Ivory Coast'                               2                  2             4
+'France'                                    2                  5             2
+'Germany'                                   3                  9             1
+'Netherlands'                               3                 11             3
+'Algeria'                                   3                  6             6
+'Switzerland'                               2                  3             1
+'Cameroon'                                  1                  0             1
+
+COUNTRY_NAME              NUM_OF_GAMES_PLAYED TOTAL_GOALS_SCORED GOALS_AGAINST
+------------------------- ------------------- ------------------ -------------
+'Costa Rica'                                3                  4             1
+'Bosnia & Herzegovina'                      2                  1             3
+'England'                                   2                  1             2
+'Russia'                                    2                  1             2
+'Brazil'                                    1                  4             1
+'Columbia'                                  2                  5             3
+'Uruguay'                                   2                  1             2
+'Argentina'                                 3                  3             3
+'Italy'                                     1                  2             1
+'Honduras'                                  1                  0             3
+'USA'                                       2                  3             3
+
+COUNTRY_NAME              NUM_OF_GAMES_PLAYED TOTAL_GOALS_SCORED GOALS_AGAINST
+------------------------- ------------------- ------------------ -------------
+'Australia'                                 1                  1             3
+'Mexico'                                    3                  4             3
+'Belgium'                                   2                  1             1
+'South Korea'                               1                  1             1
+'Greece'                                    3                  1             4
+'Portugal'                                  2                  2             6
+'Chile'                                     3                  3             3
+'Ghana'                                     2                  3             4
+'Croatia'                                   2                  5             3
+'Japan'                                     1                  1             2
+
+32 rows selected. 
+
+
+--3.11) Write a query that combines the results of the queries in 9. and 10. 
+--To get the total number of games each country has played (either as Team1 or as Team2), 
+--their total goals scored and their total goals against. 
+--Create a view TEAM_SUMMARY that has the following data attributes to hold the 
+--result of the combined query: CountryName, NoOfGames, TotalGoalsFor, TotalGoalsAgainst. Order in descending order of number of games played.
+Create view TEAM_SUMMARY(Country_Name,num_of_games_played,total_goals_scored,goals_against)
+  2  AS
+  3  SELECT
+  4  Country_Name,
+  5  sum(num_of_games_played),
+  6  sum(total_goals_scored),
+  7  sum(goals_against)
+  8  FROM
+  9  ((select COUNTRY.Country_Name,count(*) as num_of_games_played, sum(MATCH_RESULTS.Team1_score) as total_goals_scored ,sum(MATCH_RESULTS.Team2_score) as goals_against
+ 10  FROM COUNTRY,MATCH_RESULTS WHERE COUNTRY.Country_Name=MATCH_RESULTS.Team1
+ 11  GROUP BY COUNTRY.Country_Name
+ 12  )
+ 13   UNION
+ 14   (select COUNTRY.Country_Name,count(*) as num_of_games_played, sum(MATCH_RESULTS.Team2_score) as total_goals_scored ,
+ 15   sum(MATCH_RESULTS.Team1_score) as goals_against FROM COUNTRY,MATCH_RESULTS
+ 16   WHERE COUNTRY.Country_Name=MATCH_RESULTS.Team2 GROUP BY COUNTRY.Country_Name
+ 17   ))
+ 18   GROUP BY Country_Name;
+
+View created.
+
+select * from TEAM_SUMMARY order by num_of_games_played desc;
+
+COUNTRY_NAME              NUM_OF_GAMES_PLAYED TOTAL_GOALS_SCORED GOALS_AGAINST  
+------------------------- ------------------- ------------------ -------------  
+Argentina                                   7                  8             4  
+Germany                                     7                 18             4  
+Netherlands                                 7                 15             4  
+Brazil                                      7                 11            14  
+Costa Rica                                  5                  5             2  
+Belgium                                     5                  6             3  
+France                                      5                 10             3  
+Columbia                                    5                 12             4  
+Greece                                      4                  3             5  
+Switzerland                                 4                  7             7  
+Uruguay                                     4                  4             6  
+
+COUNTRY_NAME              NUM_OF_GAMES_PLAYED TOTAL_GOALS_SCORED GOALS_AGAINST  
+------------------------- ------------------- ------------------ -------------  
+Algeria                                     4                  7             7  
+USA                                         4                  5             6  
+Chile                                       4                  6             4  
+Mexico                                      4                  5             3  
+Nigeria                                     4                  3             5  
+South Korea                                 3                  3             6  
+Portugal                                    3                  4             7  
+Japan                                       3                  2             6  
+Italy                                       3                  2             3  
+Iran                                        3                  1             4  
+Ghana                                       3                  4             6  
+
+COUNTRY_NAME              NUM_OF_GAMES_PLAYED TOTAL_GOALS_SCORED GOALS_AGAINST  
+------------------------- ------------------- ------------------ -------------  
+Russia                                      3                  2             3  
+Ivory Coast                                 3                  4             5  
+Cameroon                                    3                  1             9  
+Bosnia & Herzegovina                        3                  4             4  
+Australia                                   3                  3             9  
+Spain                                       3                  4             7  
+Honduras                                    3                  1             8  
+England                                     3                  2             4  
+Croatia                                     3                  6             6  
+Ecuador                                     3                  3             3  
+
+32 rows selected.
+
+
+
+
+--3.12)For each match, print the date of match, name of team1, name of team2, 
+--name of winning team and goal difference between teams. 
+--Goal difference should be a positive value.
+   
+  select Date_of_Match,Team1,Team2,
+  (CASE WHEN Team1_score<Team2_score THEN Team2 ELSE Team1 END) as
+  Winning_Team,abs(Team1_score-Team2_score)as goal_diff from match_results;
+
+
+DATE_OF_MATCH        TEAM1                     TEAM2                     WINNING_TEAM               GOAL_DIFF
+-------------------- ------------------------- ------------------------- ------------------------- ----------
+'2014-06-13'         'Spain'                   'Netherlands'             'Netherlands'                      4
+'2014-06-14'         'Columbia'                'Greece'                  'Columbia'                         3
+'2014-06-14'         'Uruguay'                 'Costa Rica'              'Costa Rica'                       2
+'2014-06-15'         'Switzerland'             'Ecuador'                 'Switzerland'                      1
+'2014-06-15'         'Argentina'               'Bosnia & Herzegovina'    'Argentina'                        1
+'2014-06-16'         'Germany'                 'Portugal'                'Germany'                          4
+'2014-06-17'         'Belgium'                 'Algeria'                 'Belgium'                          1
+'2014-06-17'         'Brazil'                  'Mexico'                  'Brazil'                           0
+'2014-06-18'         'Spain'                   'Chile'                   'Chile'                            2
+'2014-06-19'         'Columbia'                'Ivory Coast'             'Columbia'                         1
+'2014-06-19'         'Uruguay'                 'England'                 'Uruguay'                          1
+
+DATE_OF_MATCH        TEAM1                     TEAM2                     WINNING_TEAM               GOAL_DIFF
+-------------------- ------------------------- ------------------------- ------------------------- ----------
+'2014-06-20'         'Switzerland'             'France'                  'France'                           3
+'2014-06-21'         'Argentina'               'Iran'                    'Argentina'                        1
+'2014-06-21'         'Germany'                 'Ghana'                   'Germany'                          0
+'2014-06-22'         'Belgium'                 'Russia'                  'Belgium'                          1
+'2014-06-23'         'Cameroon'                'Brazil'                  'Brazil'                           3
+'2014-06-23'         'Australia'               'Spain'                   'Spain'                            3
+'2014-06-24'         'Japan'                   'Columbia'                'Columbia'                         3
+'2014-06-24'         'Italy'                   'Uruguay'                 'Uruguay'                          1
+'2014-06-25'         'Honduras'                'Switzerland'             'Switzerland'                      3
+'2014-06-25'         'Nigeria'                 'Argentina'               'Argentina'                        1
+'2014-06-26'         'USA'                     'Germany'                 'Germany'                          1
+
+DATE_OF_MATCH        TEAM1                     TEAM2                     WINNING_TEAM               GOAL_DIFF
+-------------------- ------------------------- ------------------------- ------------------------- ----------
+'2014-06-26'         'South Korea'             'Belgium'                 'Belgium'                          1
+'2014-06-28'         'Brazil'                  'Chile'                   'Brazil'                           0
+'2014-06-29'         'Netherlands'             'Mexico'                  'Netherlands'                      1
+'2014-06-30'         'France'                  'Nigeria'                 'France'                           2
+'2014-07-01'         'Argentina'               'Switzerland'             'Argentina'                        1
+'2014-07-04'         'Brazil'                  'Columbia'                'Brazil'                           1
+'2014-07-05'         'Netherlands'             'Costa Rica'              'Netherlands'                      0
+'2014-07-08'         'Brazil'                  'Germany'                 'Germany'                          6
+'2014-07-12'         'Brazil'                  'Netherlands'             'Netherlands'                      3
+'2014-06-12'         'Brazil'                  'Croatia'                 'Brazil'                           2
+'2014-06-14'         'Ivory Coast'             'Japan'                   'Ivory Coast'                      1
+
+DATE_OF_MATCH        TEAM1                     TEAM2                     WINNING_TEAM               GOAL_DIFF
+-------------------- ------------------------- ------------------------- ------------------------- ----------
+'2014-06-14'         'England'                 'Italy'                   'Italy'                            1
+'2014-06-15'         'France'                  'Honduras'                'France'                           3
+'2014-06-16'         'Iran'                    'Nigeria'                 'Iran'                             0
+'2014-06-16'         'Ghana'                   'USA'                     'USA'                              1
+'2014-06-17'         'Russia'                  'South Korea'             'Russia'                           0
+'2014-06-18'         'Cameroon'                'Croatia'                 'Croatia'                          4
+'2014-06-18'         'Australia'               'Netherlands'             'Netherlands'                      1
+'2014-06-19'         'Japan'                   'Greece'                  'Japan'                            0
+'2014-06-20'         'Italy'                   'Costa Rica'              'Costa Rica'                       1
+'2014-06-20'         'Honduras'                'Ecuador'                 'Ecuador'                          1
+'2014-06-21'         'Nigeria'                 'Bosnia & Herzegovina'    'Nigeria'                          1
+
+DATE_OF_MATCH        TEAM1                     TEAM2                     WINNING_TEAM               GOAL_DIFF
+-------------------- ------------------------- ------------------------- ------------------------- ----------
+'2014-06-22'         'USA'                     'Portugal'                'USA'                              0
+'2014-06-22'         'South Korea'             'Algeria'                 'Algeria'                          2
+'2014-06-23'         'Croatia'                 'Mexico'                  'Mexico'                           2
+'2014-06-23'         'Netherlands'             'Chile'                   'Netherlands'                      2
+'2014-06-24'         'Greece'                  'Ivory Coast'             'Greece'                           1
+'2014-06-24'         'Costa Rica'              'England'                 'Costa Rica'                       0
+'2014-06-25'         'Ecuador'                 'France'                  'Ecuador'                          0
+'2014-06-25'         'Bosnia & Herzegovina'    'Iran'                    'Bosnia & Herzegovina'             2
+'2014-06-26'         'Portugal'                'Ghana'                   'Portugal'                         1
+'2014-06-26'         'Algeria'                 'Russia'                  'Algeria'                          0
+'2014-06-28'         'Columbia'                'Uruguay'                 'Columbia'                         2
+
+DATE_OF_MATCH        TEAM1                     TEAM2                     WINNING_TEAM               GOAL_DIFF
+-------------------- ------------------------- ------------------------- ------------------------- ----------
+'2014-06-29'         'Costa Rica'              'Greece'                  'Costa Rica'                       0
+'2014-06-30'         'Germany'                 'Algeria'                 'Germany'                          1
+'2014-07-01'         'Belgium'                 'USA'                     'Belgium'                          1
+'2014-07-04'         'France'                  'Germany'                 'Germany'                          1
+'2014-07-05'         'Argentina'               'Belgium'                 'Argentina'                        1
+'2014-06-13'         'Mexico'                  'Cameroon'                'Mexico'                           1
+'2014-06-13'         'Chile'                   'Australia'               'Chile'                            2
+'2014-07-09'         'Netherlands'             'Argentina'               'Netherlands'                      0
+'2014-07-13'         'Germany'                 'Argentina'               'Germany'                          1
+
+64 rows selected. 
+
+--3.13) Find all the matches played with country ‘Brazil’.																
+	
+Select * 
+ from match_results
+ where 
+ Team1||team2 Like '%''Brazil''%';
+ 
+ 
+
+
+  MATCH_ID DATE_OF_MATCH        START_TIME_OF_MATCH  TEAM1                     TEAM2                     TEAM1_SCORE TEAM2_SCORE STADIUM_NAME                        HOST_CITY           
+---------- -------------------- -------------------- ------------------------- ------------------------- ----------- ----------- ----------------------------------- --------------------
+        17 '2014-06-17'         '16:00:00'           'Brazil'                  'Mexico'                            0           0 'Estadio Castelao'                  'Fortaleza'         
+        33 '2014-06-23'         '17:00:00'           'Cameroon'                'Brazil'                            1           4 'Estadio Nacional'                  'Brasilia'          
+        49 '2014-06-28'         '13:00:00'           'Brazil'                  'Chile'                             1           1 'Estadio Mineirao'                  'Belo Horizonte'    
+        57 '2014-07-04'         '17:00:00'           'Brazil'                  'Columbia'                          2           1 'Estadio Castelao'                  'Fortaleza'         
+        61 '2014-07-08'         '17:00:00'           'Brazil'                  'Germany'                           1           7 'Estadio Mineirao'                  'Belo Horizonte'    
+        63 '2014-07-12'         '17:00:00'           'Brazil'                  'Netherlands'                       0           3 'Estadio Nacional'                  'Brasilia'          
+         1 '2014-06-12'         '17:00:00'           'Brazil'                  'Croatia'                           3           1 'Arena de Sao Paulo'                'Sao Paulo'         
+
+7 rows selected. 
+
+--3.14) 14)	Retrieve the names of the players who have scored at least one goal, 
+--the player’s country, and the number of goals each player scored. 
+--Order the result by number of goals scored in descending order.
+ 
+ Select p.Name,ps.Goals,p.Country 
+ from player_assists_goals ps, Players p
+ Where ps.player_id=p.player_id
+ AND ps.goals>=1
+ Order by ps.goals Desc;
+
+
+NAME                                          GOALS COUNTRY                       
+---------------------------------------- ---------- ------------------------------
+'JAMES RODRIGUEZ'                                 6 'Columbia'                    
+'THOMAS MUELLER'                                  5 'Germany'                     
+'ROBIN VAN PERSIE'                                4 'Netherlands'                 
+'LIONEL MESSI'                                    4 'Argentina'                   
+'NEYMAR SANTOS JR.'                               4 'Brazil'                      
+'ANDRE SCHUERRLE'                                 3 'Germany'                     
+'ENNER VALENCIA'                                  3 'Ecuador'                     
+'KARIM BENZEMA'                                   3 'France'                      
+'XHERDAN SHAQIRI'                                 3 'Switzerland'                 
+'ARJEN ROBBEN'                                    3 'Netherlands'                 
+'ABDELMOUMENE DJABOU'                             2 'Algeria'                     
+
+NAME                                          GOALS COUNTRY                       
+---------------------------------------- ---------- ------------------------------
+'ALEXIS SANCHEZ'                                  2 'Chile'                       
+'ANDRE AYEW'                                      2 'Ghana'                       
+'BRYAN RUIZ'                                      2 'Costa Rica'                  
+'CLINT DEMPSEY'                                   2 'USA'                         
+'AHMED MUSA'                                      2 'Nigeria'                     
+'ASAMOAH GYAN'                                    2 'Ghana'                       
+'ISLAM SLIMANI'                                   2 'Algeria'                     
+'IVAN PERISIC'                                    2 'Croatia'                     
+'JACKSON MARTINEZ'                                2 'Columbia'                    
+'DAVID LUIZ'                                      2 'Brazil'                      
+'GERVINHO YAO KOUASSI'                            2 'Ivory Coast'                 
+
+NAME                                          GOALS COUNTRY                       
+---------------------------------------- ---------- ------------------------------
+'TIM CAHILL'                                      2 'Australia'                   
+'LUIS SUAREZ'                                     2 'Uruguay'                     
+'MARIO MANDZUKIC'                                 2 'Croatia'                     
+'TONI KROOS'                                      2 'Germany'                     
+'WILFRIED BONY'                                   2 'Ivory Coast'                 
+'MARIO GOETZE'                                    2 'Germany'                     
+'MATS HUMMELS'                                    2 'Germany'                     
+'MEMPHIS DEPAY'                                   2 'Netherlands'                 
+'MIROSLAV KLOSE'                                  2 'Germany'                     
+'OSCAR DOS SANTOS JR.'                            2 'Brazil'                      
+'SON HEUNGMIN'                                    1 'South Korea'                 
+
+NAME                                          GOALS COUNTRY                       
+---------------------------------------- ---------- ------------------------------
+'STEFAN DE VRIJ'                                  1 'Netherlands'                 
+'VARELA SILVESTRE'                                1 'Portugal'                    
+'WAYNE ROONEY'                                    1 'England'                     
+'XABI ALONSO'                                     1 'Spain'                       
+'KLAAS JAN HUNTELAAR'                             1 'Netherlands'                 
+'MARCOS URENA'                                    1 'Costa Rica'                  
+'MARIO BALOTELLI'                                 1 'Italy'                       
+'MAROUANE FELLAINI'                               1 'Belgium'                     
+'MATHIEU VALBUENA'                                1 'France'                      
+'MESUT OEZIL'                                     1 'Germany'                     
+'MILE JEDINAK'                                    1 'Australia'                   
+
+NAME                                          GOALS COUNTRY                       
+---------------------------------------- ---------- ------------------------------
+'MOUSSA SISSOKO'                                  1 'France'                      
+'NANI DA CUNHA'                                   1 'Portugal'                    
+'OGNJEN VRANJES'                                  1 'Bosnia & Herzegovina'        
+'OLIVIER GIROUD'                                  1 'France'                      
+'OSCAR DUARTE'                                    1 'Costa Rica'                  
+'PABLO ARMERO'                                    1 'Columbia'                    
+'RAFAEL MARQUEZ'                                  1 'Mexico'                      
+'REZA GHOOCHANNEJAD'                              1 'Iran'                        
+'ALEXANDER KOKORIN'                               1 'Russia'                      
+'ANDREAS SAMARIS'                                 1 'Greece'                      
+'BLERIM DZEMAILI'                                 1 'Switzerland'                 
+
+NAME                                          GOALS COUNTRY                       
+---------------------------------------- ---------- ------------------------------
+'CHARLES ARANGUIZ'                                1 'Chile'                       
+'CLAUDIO MARCHISIO'                               1 'Italy'                       
+'ADMIR MEHMEDI'                                   1 'Switzerland'                 
+'ALEKSANDR KERZHAKOV'                             1 'Russia'                      
+'ANDRES GUARDADO'                                 1 'Mexico'                      
+'ANGEL DI MARIA'                                  1 'Argentina'                   
+'BLAISE MATUIDI'                                  1 'France'                      
+'CARLO COSTLY'                                    1 'Honduras'                    
+'GONZALO HIGUAIN'                                 1 'Argentina'                   
+'GRANIT XHAKA'                                    1 'Switzerland'                 
+'HARIS SEFEROVIC'                                 1 'Switzerland'                 
+
+NAME                                          GOALS COUNTRY                       
+---------------------------------------- ---------- ------------------------------
+'IVICA OLIC'                                      1 'Croatia'                     
+'JAN VERTONGHEN'                                  1 'Belgium'                     
+'CRISTIANO RONALDO'                               1 'Portugal'                    
+'DALEY BLIND'                                     1 'Netherlands'                 
+'DANIEL STURRIDGE'                                1 'England'                     
+'DIEGO GODIN'                                     1 'Uruguay'                     
+'DIVOCK ORIGI'                                    1 'Belgium'                     
+'EDIN DZEKO'                                      1 'Bosnia & Herzegovina'        
+'EDINSON CAVANI'                                  1 'Uruguay'                     
+'EDUARDO VARGAS'                                  1 'Chile'                       
+'FERNANDINHO LUIZ ROZA'                           1 'Brazil'                      
+
+NAME                                          GOALS COUNTRY                       
+---------------------------------------- ---------- ------------------------------
+'FRED CHAVES GUEDES'                              1 'Brazil'                      
+'GEORGINIO WIJNALDUM'                             1 'Netherlands'                 
+'GEORGIOS SAMARAS'                                1 'Greece'                      
+'DAVID VILLA'                                     1 'Spain'                       
+'DRIES MERTENS'                                   1 'Belgium'                     
+'FERNANDO TORRES'                                 1 'Spain'                       
+'GIOVANI DOS SANTOS'                              1 'Mexico'                      
+'SOKRATIS PAPASTATHOPOULOS'                       1 'Greece'                      
+'TEOFILO GUTIERREZ'                               1 'Columbia'                    
+'THIAGO SILVA'                                    1 'Brazil'                      
+'VEDAD IBISEVIC'                                  1 'Bosnia & Herzegovina'        
+
+NAME                                          GOALS COUNTRY                       
+---------------------------------------- ---------- ------------------------------
+'WESLEY SNEIJDER'                                 1 'Netherlands'                 
+'YACINE BRAHIMI'                                  1 'Algeria'                     
+'JAVIER HERNANDEZ'                                1 'Mexico'                      
+'JEAN BEAUSEJOUR'                                 1 'Chile'                       
+'JERMAINE JONES'                                  1 'USA'                         
+'JOEL CAMPBELL'                                   1 'Costa Rica'                  
+'JUAN CUADRADO'                                   1 'Columbia'                    
+'JUAN QUINTERO'                                   1 'Columbia'                    
+'JULIAN GREEN'                                    1 'USA'                         
+'KOO JACHEOL'                                     1 'South Korea'                 
+'LEE KEUNHO'                                      1 'South Korea'                 
+
+NAME                                          GOALS COUNTRY                       
+---------------------------------------- ---------- ------------------------------
+'LEROY FER'                                       1 'Netherlands'                 
+'JOEL MATIP'                                      1 'Cameroon'                    
+'JOHN BROOKS'                                     1 'USA'                         
+'JORGE VALDIVIA'                                  1 'Chile'                       
+'JUAN MATA'                                       1 'Spain'                       
+'KEISUKE HONDA'                                   1 'Japan'                       
+'KEVIN DE BRUYNE'                                 1 'Belgium'                     
+'MARCOS ROJO'                                     1 'Argentina'                   
+'MIRALEM PJANIC'                                  1 'Bosnia & Herzegovina'        
+'ORIBE PERALTA'                                   1 'Mexico'                      
+'PAUL POGBA'                                      1 'France'                      
+
+NAME                                          GOALS COUNTRY                       
+---------------------------------------- ---------- ------------------------------
+'PETER ODEMWINGIE'                                1 'Nigeria'                     
+'RAFIK HALLICHE'                                  1 'Algeria'                     
+'ROMELU LUKAKU'                                   1 'Belgium'                     
+'SAMI KHEDIRA'                                    1 'Germany'                     
+'SHINJI OKAZAKI'                                  1 'Japan'                       
+'SOFIANE FEGHOULI'                                1 'Algeria'                     
+
+116 rows selected. 
+
+--3.15) Repeat 14. But only for the players who have more than 2 goals.
+ Select p.Name,ps.Goals,p.Country 
+ from player_assists_goals ps, Players p
+ Where ps.player_id=p.player_id
+ AND ps.goals>2
+ Order by ps.goals Desc;
+
+NAME                                          GOALS COUNTRY                       
+---------------------------------------- ---------- ------------------------------
+'JAMES RODRIGUEZ'                                 6 'Columbia'                    
+'THOMAS MUELLER'                                  5 'Germany'                     
+'ROBIN VAN PERSIE'                                4 'Netherlands'                 
+'LIONEL MESSI'                                    4 'Argentina'                   
+'NEYMAR SANTOS JR.'                               4 'Brazil'                      
+'ANDRE SCHUERRLE'                                 3 'Germany'                     
+'ENNER VALENCIA'                                  3 'Ecuador'                     
+'KARIM BENZEMA'                                   3 'France'                      
+'XHERDAN SHAQIRI'                                 3 'Switzerland'                 
+'ARJEN ROBBEN'                                    3 'Netherlands'                 
+
+10 rows selected. 
+
+--3.16)	Make a list of participating countries and their population, ordered in descending order of population.
+Select population,Country_name AS Participating_countries   
+from Country
+order by population desc ; 
+
+POPULATION PARTICIPATING_COUNTRIES                           
+---------- --------------------------------------------------
+     318.9 'USA'                                             
+     202.4 'Brazil'                                          
+     173.6 'Nigeria'                                         
+    142.46 'Russia'                                          
+    127.06 'Japan'                                           
+     122.3 'Mexico'                                          
+      82.6 'Germany'                                         
+     77.97 'Iran'                                            
+      64.6 'France'                                          
+     61.07 'Italy'                                           
+      53.5 'England'                                         
+
+POPULATION PARTICIPATING_COUNTRIES                           
+---------- --------------------------------------------------
+     50.42 'South Korea'                                     
+     49.14 'Columbia'                                        
+      47.1 'Spain'                                           
+      42.3 'Argentina'                                       
+      39.9 'Algeria'                                         
+      25.9 'Ghana'                                           
+     23.59 'Australia'                                       
+     23.03 'Cameroon'                                        
+     20.32 'Ivory Coast'                                     
+     17.62 'Chile'                                           
+      16.9 'Netherlands'                                     
+
+POPULATION PARTICIPATING_COUNTRIES                           
+---------- --------------------------------------------------
+     15.98 'Ecuador'                                         
+      11.2 'Greece'                                          
+      11.2 'Belgium'                                         
+     10.58 'Portugal'                                        
+      8.09 'Honduras'                                        
+         8 'Switzerland'                                     
+      4.87 'Costa Rica'                                      
+      4.25 'Croatia'                                         
+      3.83 'Bosnia & Herzegovina'                            
+      3.42 'Uruguay'                                         
+
+32 rows selected. 
+
+--4.Execute 3 more Insert commands that attempt to insert 3 more records, 
+--such that the records violate the integrity constraints. 
+--Make each of the 3 records violate a different type of integrity constraint. 
+--Capture your commands in spool files for turning in. 
+ 
+ --PRIMARY KEY CONSTRAINT VIOLATED
+ INSERT INTO PLAYERS VALUES (354875,'SUNIL CHEETRI','SUNIL','CHEETRI','1992-02-23','INDIA',168,'MUMBAI INDIANS','Forward',5,'TRUE');
+
+
+Error starting at line : 1 File @ E:\UTA\DB\DB1_project\db_demo.sql
+In command -
+ INSERT INTO PLAYERS VALUES (354875,'SUNIL CHEETRI','SUNIL','CHEETRI','1992-02-23','INDIA',168,'MUMBAI INDIANS','Forward',5,'TRUE')
+Error report -
+ORA-00001: unique constraint (HR.SYS_C0011226) violated
+
+
+--FOREIGN KEY CONSTRAINT VIOLATED
+ INSERT INTO PLAYER_CARD VALUES (222222,1,0);
+ 
+ 
+
+Error starting at line : 1 File @ E:\UTA\DB\DB1_project\db_demo.sql
+In command -
+ INSERT INTO PLAYER_CARD VALUES (222222,1,0)
+Error report -
+ORA-02291: integrity constraint (HR.SYS_C0011235) violated - parent key not found
+
+
+--DOMAIN CONSTRAINT VIOLATED
+ INSERT INTO COUNTRY VALUES ( 'INDIA',52.1,'VIOLATING_VALUE','VIRAT');
+ 
+Error starting at line : 1 File @ E:\UTA\DB\DB1_project\db_demo.sql
+In command -
+INSERT INTO COUNTRY VALUES ( 'INDIA',52.1,'VIOLATING_VALUE','VIRAT')
+Error report -
+ORA-01722: invalid number
+
+--5.	Execute a sql command to Delete a record that violates 
+ --     a referential integrity constraint. 
+ --		Capture your command in a spool file for turning in.
+ DELETE From PLAYERS WHERE player_id=354875;
+ 
+Error starting at line : 1 File @ E:\UTA\DB\DB1_project\db_demo.sql
+In command -
+DELETE From PLAYERS WHERE player_id=354875
+Error report -
+ORA-02292: integrity constraint (HR.SYS_C0011232) violated - child record found
+
+--6.	Repeat 5, but Insert three new records that do not violate 
+ --    any integrity constraints. 
+ --     Capture your commands in spool files for turning in.
+ 
+ 
+INSERT INTO COUNTRY VALUES ('INDIA',52.1,1,'Pronay Halder');
+INSERT INTO COUNTRY VALUES ('NEPAL',11.2,0,'SRIKANT SAI');
+INSERT INTO COUNTRY VALUES ('PAKISTAN',25.1,0,'ASIF AGWAN');
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+INSERT INTO PLAYERS VALUES (222222,'SUNIL CHEETRI','SUNIL','CHEETRI','1992-02-23','INDIA',168,'MUMBAI INDIANS','Forward',5,'TRUE');
+INSERT INTO PLAYERS VALUES (333333,'ROHIT CHAND','ROHIT','CHAND','1985-07-08','NEPAL',152,'NEPAL TIGERS','Defender',6,'FALSE');
+INSERT INTO PLAYERS VALUES (444444,'YOUSUF BUTT','YOUSUF','BUTT','1985-02-07','PAKISTAN',160,'PAKISTAN LION','Forward',1,'TRUE');
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+INSERT INTO MATCH_RESULTS VALUES (65,'2014-07-12','17:00:00','INDIA','NEPAL',3,1,'WANKHEDE','MUMBAI');
+INSERT INTO MATCH_RESULTS VALUES (66,'2014-07-30','15:00:00','PAKISTAN','INDIA',3,4,'SONIC','KATMANDU');
+INSERT INTO MATCH_RESULTS VALUES (67,'2014-07-20','18:00:00','NEPAL','PAKISTAN',5,3,'ISLAMIC','KARACHI');
+
+ 
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+INSERT INTO PLAYER_CARD VALUES (222222,1,0);
+INSERT INTO PLAYER_CARD VALUES (333333,1,1);
+INSERT INTO PLAYER_CARD VALUES (444444,1,0);
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+INSERT INTO PLAYER_ASSISTS_GOALS VALUES (222222,5,6,2,400);
+INSERT INTO PLAYER_ASSISTS_GOALS VALUES (333333,3,2,2,100);
+INSERT INTO PLAYER_ASSISTS_GOALS VALUES (444444,2,4,5,100);
+
+ 
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+

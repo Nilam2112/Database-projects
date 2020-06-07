@@ -1,0 +1,64 @@
+
+Table BOOK created.
+
+Name      Null?    Type         
+--------- -------- ------------ 
+BOOK_ID   NOT NULL NUMBER(38)   
+TITLE     NOT NULL VARCHAR2(50) 
+AUTHOR    NOT NULL VARCHAR2(50) 
+PUBLISHER NOT NULL VARCHAR2(50) 
+
+Table CATLOG created.
+
+Name                   Null?    Type          
+---------------------- -------- ------------- 
+ISBN                   NOT NULL VARCHAR2(50)  
+NO_OF_COPIES_AVAILABLE NOT NULL NUMBER(38)    
+NO_OF_COPIES_RENTED    NOT NULL NUMBER(38)    
+SUBJECT_AREA           NOT NULL VARCHAR2(40)  
+DESCRIPTION            NOT NULL VARCHAR2(100) 
+
+Table BOOK_LOGS created.
+
+Name    Null?    Type         
+------- -------- ------------ 
+BOOK_ID NOT NULL NUMBER(38)   
+ISBN    NOT NULL VARCHAR2(50) 
+
+Table MEMBER created.
+
+Name           Null?    Type         
+-------------- -------- ------------ 
+CARD_NO        NOT NULL NUMBER(38)   
+NAME           NOT NULL VARCHAR2(50) 
+PHONE                   NUMBER(38)   
+SSN            NOT NULL NUMBER(38)   
+CAMPUS_ADDRESS          VARCHAR2(50) 
+HOME_ADDRESS            VARCHAR2(50) 
+MEMBER_TYPE             VARCHAR2(50) 
+
+Table LOANS created.
+
+Name     Null?    Type       
+-------- -------- ---------- 
+BOOK_ID  NOT NULL NUMBER(38) 
+CARD_NO  NOT NULL NUMBER(38) 
+DATE_OUT          DATE       
+DUE_DATE          DATE       
+
+Table BORROWER created.
+
+Name                Null?    Type         
+------------------- -------- ------------ 
+CARD_NO             NOT NULL NUMBER(38)   
+NAME                NOT NULL VARCHAR2(50) 
+MEMBERSHIP_VALIDITY          DATE         
+
+Table LIBRARY_STAFF created.
+
+Name           Null?    Type         
+-------------- -------- ------------ 
+SSN            NOT NULL NUMBER(38)   
+NAME           NOT NULL VARCHAR2(50) 
+POSITION                VARCHAR2(50) 
+ISSUED_BOOK_ID NOT NULL NUMBER(38)   

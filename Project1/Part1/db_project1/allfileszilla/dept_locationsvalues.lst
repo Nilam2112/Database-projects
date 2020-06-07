@@ -1,0 +1,26 @@
+SQL> select * from dept_locations;
+
+   DNUMBER DLOCATION                                                            
+---------- ---------------                                                      
+         1 Houston                                                              
+         4 Stafford                                                             
+         5 Bellaire                                                             
+         5 Houston                                                              
+         5 Sugarland                                                            
+         6 Atlanta                                                              
+         6 Sacramento                                                           
+         7 Milwaukee                                                            
+         8 Chicago                                                              
+         8 Dallas                                                               
+         8 Miami                                                                
+
+   DNUMBER DLOCATION                                                            
+---------- ---------------                                                      
+         8 Philadephia                                                          
+         8 Seattle                                                              
+         9 Arlington                                                            
+        11 Austin                                                               
+
+15 rows selected.
+
+SQL> spool off

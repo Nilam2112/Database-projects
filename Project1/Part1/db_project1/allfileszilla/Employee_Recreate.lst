@@ -1,0 +1,20 @@
+SQL> drop table employee;
+
+Table dropped.
+
+SQL> CREATE TABLE EMPLOYEE(
+  2  FNAME VARCHAR(15) NOT NULL,
+  3  MINIT CHAR(4),
+  4  LNAME VARCHAR(15) NOT NULL,
+  5  SSN CHAR(9) NOT NULL,
+  6  BDATE DATE,
+  7  ADDRESS VARCHAR(30),
+  8  SEX CHAR(2),
+  9  SALARY DECIMAL(10,2),
+ 10  SUPER_SSN CHAR(9),
+ 11  DNO INT NOT NULL,
+ 12  PRIMARY KEY(SSN));
+
+Table created.
+
+SQL> spool off

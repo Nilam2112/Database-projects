@@ -1,0 +1,186 @@
+-----Query 3---- This Shows weekly report . 
+
+Select c.subject_area,b.author,c.no_of_copies_available,l.due_date-l.date_out AS "No Of Days Loaned"
+From BOOK B,CATLOG C,BOOK_LOGS BL,LOANS L
+Where C.ISBN=BL.ISBN AND BL.Book_ID=B.Book_ID AND B.Book_ID=L.Book_ID 
+AND l.date_out>='01-MAR-19'AND l.date_out<'07-MAR-19';
+
+SUBJECT_AREA                             AUTHOR                                             NO_OF_COPIES_AVAILABLE No Of Days Loaned
+---------------------------------------- -------------------------------------------------- ---------------------- -----------------
+art                                      Adrian Roo                                                              4                10
+art                                      Christopher N Brooks                                                   10                12
+economics                                Gary S. Becker                                                          1                14
+
+
+
+-----Query to show all data of books-----
+
+Select B.book_id,b.Author,b.title,b.publisher,c.isbn,c.no_of_copies_available,c.no_of_copies_rented,c.subject_area,c.description
+From Book b, Catlog c, book_logs bl
+Where b.book_id=bl.book_id and bl.isbn=c.isbn;
+
+
+
+   BOOK_ID AUTHOR                                             TITLE                                              PUBLISHER                                          ISBN                                               NO_OF_COPIES_AVAILABLE NO_OF_COPIES_RENTED SUBJECT_AREA                             DESCRIPTION                                                                                         
+---------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- ---------------------- ------------------- ---------------------------------------- ----------------------------------------------------------------------------------------------------
+         4 Donna Governor                                     Staging Family Science Nights                      Canongate                                          456345768                                                               6                   2 Basic Science                            Basic science such as understanding how cells work                                                  
+         5 Elizabeth Tasker                                   The Planet Factory                                 Pelican                                            123890567                                                               5                   1 Basic Science                            Basic science such as understanding how cells work                                                  
+         6 Jeffrey  Carver                                    Software Engineering for Science                   Pelican                                            567341213                                                               5                   3 Basic Science                            Basic science such as understanding how cells work                                                  
+         7 Adrian Roo                                         A Dictionary of Art Titles                         Canongate                                          980765414                                                               4                   1 art                                      Artists books are books                                                                             
+         8 Christopher N Brooks                               Architectural Acoustics                            Merry M                                            456723415                                                              10                   1 art                                      Artists books are books                                                                             
+         9 Joshua Bloch                                       Effective Java                                     Virago                                             162347809                                                               3                   7 art                                      Artists books are books                                                                             
+        10 Naftalin                                           Java Generics                                      Pelican                                            134567897                                                               2                   1 java                                     In this book you will learn                                                                         
+        11 Rasmus                                             Programming PHP                                    Pan                                                123456798                                                               1                   3 php                                      The reader starts with the easy stuff                                                               
+        12 Gary S. Becker                                     Economic Theory                                    Picador                                            123457689                                                               1                   4 economics                                This book sets the subject out chronologically                                                      
+        13 Thomas Sowell                                      Basic Economics                                    Basic Books                                        213456709                                                               2                   1 economics                                This book sets the subject out chronologically                                                      
+
+10 rows selected. 
+
+-----Query to show all data of Members-----
+
+Select m.card_no,m.name,m.phone,m.ssn,m.campus_address,m.home_address,m.member_type,b.membership_validity
+FROM Member m,borrower b
+where m.card_no=b.card_no;
+
+
+
+
+   CARD_NO NAME                                                    PHONE        SSN CAMPUS_ADDRESS                                     HOME_ADDRESS                                       MEMBER_TYPE                                        MEMBERSHI
+---------- -------------------------------------------------- ---------- ---------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- ---------
+      4444 Neelam Makwana                                     2147483647  144411111 367 Las Colinas east                               367 Las Colinas east                               Student                                            12-FEB-21
+      5555 jecy Mark                                          2147483646  233334444 North MacArthur west                               North MacArthur west                               Student                                            13-DEC-19
+      6666 Linda D                                            2147483645  355556666 16 Riverside                                       500 Las Colinas west                               Student                                            30-DEC-20
+      7777 Thomas robb                                        2147483644  499911111 West Fork                                          West Fork                                          Professor                                          15-MAR-22
+      8888 Liya Mark                                          2147483643  588884444 15 riverside east                                  15 riverside east                                  Student                                            18-MAR-21
+      9999 Jamin Patel                                        2147483642  611117777 Walton Walker blvd                                 Walton Walker blvd                                 Student                                            20-APR-20
+      1010 Andrew H                                           2147483641  799995555 West Interstate 20                                 West Interstate 20                                 Professor                                          17-AUG-19
+      1011 Rennie M                                           2147483640  833322222 North south hill 368                               North south hill 368                               Student                                            25-FEB-20
+      1012 Allen Li                                           2147483639  922226666 west side Fork 450                                 arbor oak                                          Student                                            16-MAR-10
+      1013 Yanli D                                            2147483638  101188888 5000 river side west                               5000 river side west                               Professor                                          14-APR-22
+
+10 rows selected. 
+
+----query to show all datas of  books on rent-----
+
+
+
+   CARD_NO    BOOK_ID NAME                                               TITLE                                              DATE_BORR DUE_DATE  MEMBERSHI
+---------- ---------- -------------------------------------------------- -------------------------------------------------- --------- --------- ---------
+      4444          4 Neelam Makwana                                     Staging Family Science Nights                      02-FEB-19 12-FEB-19 12-FEB-21
+      5555          4 jecy Mark                                          Staging Family Science Nights                      02-FEB-19 12-FEB-19 13-DEC-19
+      6666          4 Linda D                                            Staging Family Science Nights                      02-FEB-19 12-FEB-19 30-DEC-20
+      7777          4 Thomas robb                                        Staging Family Science Nights                      02-FEB-19 12-FEB-19 15-MAR-22
+      8888          4 Liya Mark                                          Staging Family Science Nights                      02-FEB-19 12-FEB-19 18-MAR-21
+      9999          4 Jamin Patel                                        Staging Family Science Nights                      02-FEB-19 12-FEB-19 20-APR-20
+      1010          4 Andrew H                                           Staging Family Science Nights                      02-FEB-19 12-FEB-19 17-AUG-19
+      1011          4 Rennie M                                           Staging Family Science Nights                      02-FEB-19 12-FEB-19 25-FEB-20
+      1012          4 Allen Li                                           Staging Family Science Nights                      02-FEB-19 12-FEB-19 16-MAR-10
+      1013          4 Yanli D                                            Staging Family Science Nights                      02-FEB-19 12-FEB-19 14-APR-22
+      4444          5 Neelam Makwana                                     The Planet Factory                                 03-FEB-19 13-FEB-19 12-FEB-21
+
+   CARD_NO    BOOK_ID NAME                                               TITLE                                              DATE_BORR DUE_DATE  MEMBERSHI
+---------- ---------- -------------------------------------------------- -------------------------------------------------- --------- --------- ---------
+      5555          5 jecy Mark                                          The Planet Factory                                 03-FEB-19 13-FEB-19 13-DEC-19
+      6666          5 Linda D                                            The Planet Factory                                 03-FEB-19 13-FEB-19 30-DEC-20
+      7777          5 Thomas robb                                        The Planet Factory                                 03-FEB-19 13-FEB-19 15-MAR-22
+      8888          5 Liya Mark                                          The Planet Factory                                 03-FEB-19 13-FEB-19 18-MAR-21
+      9999          5 Jamin Patel                                        The Planet Factory                                 03-FEB-19 13-FEB-19 20-APR-20
+      1010          5 Andrew H                                           The Planet Factory                                 03-FEB-19 13-FEB-19 17-AUG-19
+      1011          5 Rennie M                                           The Planet Factory                                 03-FEB-19 13-FEB-19 25-FEB-20
+      1012          5 Allen Li                                           The Planet Factory                                 03-FEB-19 13-FEB-19 16-MAR-10
+      1013          5 Yanli D                                            The Planet Factory                                 03-FEB-19 13-FEB-19 14-APR-22
+      4444          6 Neelam Makwana                                     Software Engineering for Science                   04-JAN-19 14-JAN-19 12-FEB-21
+      5555          6 jecy Mark                                          Software Engineering for Science                   04-JAN-19 14-JAN-19 13-DEC-19
+
+   CARD_NO    BOOK_ID NAME                                               TITLE                                              DATE_BORR DUE_DATE  MEMBERSHI
+---------- ---------- -------------------------------------------------- -------------------------------------------------- --------- --------- ---------
+      6666          6 Linda D                                            Software Engineering for Science                   04-JAN-19 14-JAN-19 30-DEC-20
+      7777          6 Thomas robb                                        Software Engineering for Science                   04-JAN-19 14-JAN-19 15-MAR-22
+      8888          6 Liya Mark                                          Software Engineering for Science                   04-JAN-19 14-JAN-19 18-MAR-21
+      9999          6 Jamin Patel                                        Software Engineering for Science                   04-JAN-19 14-JAN-19 20-APR-20
+      1010          6 Andrew H                                           Software Engineering for Science                   04-JAN-19 14-JAN-19 17-AUG-19
+      1011          6 Rennie M                                           Software Engineering for Science                   04-JAN-19 14-JAN-19 25-FEB-20
+      1012          6 Allen Li                                           Software Engineering for Science                   04-JAN-19 14-JAN-19 16-MAR-10
+      1013          6 Yanli D                                            Software Engineering for Science                   04-JAN-19 14-JAN-19 14-APR-22
+      4444          7 Neelam Makwana                                     A Dictionary of Art Titles                         05-MAR-19 15-MAR-19 12-FEB-21
+      5555          7 jecy Mark                                          A Dictionary of Art Titles                         05-MAR-19 15-MAR-19 13-DEC-19
+      6666          7 Linda D                                            A Dictionary of Art Titles                         05-MAR-19 15-MAR-19 30-DEC-20
+
+   CARD_NO    BOOK_ID NAME                                               TITLE                                              DATE_BORR DUE_DATE  MEMBERSHI
+---------- ---------- -------------------------------------------------- -------------------------------------------------- --------- --------- ---------
+      7777          7 Thomas robb                                        A Dictionary of Art Titles                         05-MAR-19 15-MAR-19 15-MAR-22
+      8888          7 Liya Mark                                          A Dictionary of Art Titles                         05-MAR-19 15-MAR-19 18-MAR-21
+      9999          7 Jamin Patel                                        A Dictionary of Art Titles                         05-MAR-19 15-MAR-19 20-APR-20
+      1010          7 Andrew H                                           A Dictionary of Art Titles                         05-MAR-19 15-MAR-19 17-AUG-19
+      1011          7 Rennie M                                           A Dictionary of Art Titles                         05-MAR-19 15-MAR-19 25-FEB-20
+      1012          7 Allen Li                                           A Dictionary of Art Titles                         05-MAR-19 15-MAR-19 16-MAR-10
+      1013          7 Yanli D                                            A Dictionary of Art Titles                         05-MAR-19 15-MAR-19 14-APR-22
+      4444          8 Neelam Makwana                                     Architectural Acoustics                            06-MAR-19 18-MAR-19 12-FEB-21
+      5555          8 jecy Mark                                          Architectural Acoustics                            06-MAR-19 18-MAR-19 13-DEC-19
+      6666          8 Linda D                                            Architectural Acoustics                            06-MAR-19 18-MAR-19 30-DEC-20
+      7777          8 Thomas robb                                        Architectural Acoustics                            06-MAR-19 18-MAR-19 15-MAR-22
+
+   CARD_NO    BOOK_ID NAME                                               TITLE                                              DATE_BORR DUE_DATE  MEMBERSHI
+---------- ---------- -------------------------------------------------- -------------------------------------------------- --------- --------- ---------
+      8888          8 Liya Mark                                          Architectural Acoustics                            06-MAR-19 18-MAR-19 18-MAR-21
+      9999          8 Jamin Patel                                        Architectural Acoustics                            06-MAR-19 18-MAR-19 20-APR-20
+      1010          8 Andrew H                                           Architectural Acoustics                            06-MAR-19 18-MAR-19 17-AUG-19
+      1011          8 Rennie M                                           Architectural Acoustics                            06-MAR-19 18-MAR-19 25-FEB-20
+      1012          8 Allen Li                                           Architectural Acoustics                            06-MAR-19 18-MAR-19 16-MAR-10
+      1013          8 Yanli D                                            Architectural Acoustics                            06-MAR-19 18-MAR-19 14-APR-22
+      4444          9 Neelam Makwana                                     Effective Java                                     07-APR-19 20-APR-19 12-FEB-21
+      5555          9 jecy Mark                                          Effective Java                                     07-APR-19 20-APR-19 13-DEC-19
+      6666          9 Linda D                                            Effective Java                                     07-APR-19 20-APR-19 30-DEC-20
+      7777          9 Thomas robb                                        Effective Java                                     07-APR-19 20-APR-19 15-MAR-22
+      8888          9 Liya Mark                                          Effective Java                                     07-APR-19 20-APR-19 18-MAR-21
+
+   CARD_NO    BOOK_ID NAME                                               TITLE                                              DATE_BORR DUE_DATE  MEMBERSHI
+---------- ---------- -------------------------------------------------- -------------------------------------------------- --------- --------- ---------
+      9999          9 Jamin Patel                                        Effective Java                                     07-APR-19 20-APR-19 20-APR-20
+      1010          9 Andrew H                                           Effective Java                                     07-APR-19 20-APR-19 17-AUG-19
+      1011          9 Rennie M                                           Effective Java                                     07-APR-19 20-APR-19 25-FEB-20
+      1012          9 Allen Li                                           Effective Java                                     07-APR-19 20-APR-19 16-MAR-10
+      1013          9 Yanli D                                            Effective Java                                     07-APR-19 20-APR-19 14-APR-22
+      4444         11 Neelam Makwana                                     Programming PHP                                    09-FEB-19 25-FEB-19 12-FEB-21
+      5555         11 jecy Mark                                          Programming PHP                                    09-FEB-19 25-FEB-19 13-DEC-19
+      6666         11 Linda D                                            Programming PHP                                    09-FEB-19 25-FEB-19 30-DEC-20
+      7777         11 Thomas robb                                        Programming PHP                                    09-FEB-19 25-FEB-19 15-MAR-22
+      8888         11 Liya Mark                                          Programming PHP                                    09-FEB-19 25-FEB-19 18-MAR-21
+      9999         11 Jamin Patel                                        Programming PHP                                    09-FEB-19 25-FEB-19 20-APR-20
+
+   CARD_NO    BOOK_ID NAME                                               TITLE                                              DATE_BORR DUE_DATE  MEMBERSHI
+---------- ---------- -------------------------------------------------- -------------------------------------------------- --------- --------- ---------
+      1010         11 Andrew H                                           Programming PHP                                    09-FEB-19 25-FEB-19 17-AUG-19
+      1011         11 Rennie M                                           Programming PHP                                    09-FEB-19 25-FEB-19 25-FEB-20
+      1012         11 Allen Li                                           Programming PHP                                    09-FEB-19 25-FEB-19 16-MAR-10
+      1013         11 Yanli D                                            Programming PHP                                    09-FEB-19 25-FEB-19 14-APR-22
+      4444         12 Neelam Makwana                                     Economic Theory                                    02-MAR-19 16-MAR-19 12-FEB-21
+      5555         12 jecy Mark                                          Economic Theory                                    02-MAR-19 16-MAR-19 13-DEC-19
+      6666         12 Linda D                                            Economic Theory                                    02-MAR-19 16-MAR-19 30-DEC-20
+      7777         12 Thomas robb                                        Economic Theory                                    02-MAR-19 16-MAR-19 15-MAR-22
+      8888         12 Liya Mark                                          Economic Theory                                    02-MAR-19 16-MAR-19 18-MAR-21
+      9999         12 Jamin Patel                                        Economic Theory                                    02-MAR-19 16-MAR-19 20-APR-20
+      1010         12 Andrew H                                           Economic Theory                                    02-MAR-19 16-MAR-19 17-AUG-19
+
+   CARD_NO    BOOK_ID NAME                                               TITLE                                              DATE_BORR DUE_DATE  MEMBERSHI
+---------- ---------- -------------------------------------------------- -------------------------------------------------- --------- --------- ---------
+      1011         12 Rennie M                                           Economic Theory                                    02-MAR-19 16-MAR-19 25-FEB-20
+      1012         12 Allen Li                                           Economic Theory                                    02-MAR-19 16-MAR-19 16-MAR-10
+      1013         12 Yanli D                                            Economic Theory                                    02-MAR-19 16-MAR-19 14-APR-22
+      4444         13 Neelam Makwana                                     Basic Economics                                    04-APR-19 14-APR-19 12-FEB-21
+      5555         13 jecy Mark                                          Basic Economics                                    04-APR-19 14-APR-19 13-DEC-19
+      6666         13 Linda D                                            Basic Economics                                    04-APR-19 14-APR-19 30-DEC-20
+      7777         13 Thomas robb                                        Basic Economics                                    04-APR-19 14-APR-19 15-MAR-22
+      8888         13 Liya Mark                                          Basic Economics                                    04-APR-19 14-APR-19 18-MAR-21
+      9999         13 Jamin Patel                                        Basic Economics                                    04-APR-19 14-APR-19 20-APR-20
+      1010         13 Andrew H                                           Basic Economics                                    04-APR-19 14-APR-19 17-AUG-19
+      1011         13 Rennie M                                           Basic Economics                                    04-APR-19 14-APR-19 25-FEB-20
+
+   CARD_NO    BOOK_ID NAME                                               TITLE                                              DATE_BORR DUE_DATE  MEMBERSHI
+---------- ---------- -------------------------------------------------- -------------------------------------------------- --------- --------- ---------
+      1012         13 Allen Li                                           Basic Economics                                    04-APR-19 14-APR-19 16-MAR-10
+      1013         13 Yanli D                                            Basic Economics                                    04-APR-19 14-APR-19 14-APR-22
+
+90 rows selected. 
+
+

@@ -1,0 +1,3 @@
+SQL> sool off'
+SP2-0042: unknown command "sool off'" - rest of line ignored.
+SQL> spool off

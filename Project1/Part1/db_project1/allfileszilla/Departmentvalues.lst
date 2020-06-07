@@ -1,0 +1,17 @@
+SQL> select * from department;
+
+DNAME              DNUMBER MGR_SSN   MGR_START                                  
+--------------- ---------- --------- ---------                                  
+Research                 5 333445555 22-MAY-78                                  
+Administration           4 987654321 01-JAN-85                                  
+Headquarters             1 888665555 19-JUN-71                                  
+Software                 6 111111100 15-MAY-99                                  
+Hardware                 7 444444400 15-MAY-98                                  
+Sales                    8 555555500 01-JAN-9                                
+HR                       9 112244668 01-FEB-89                                  
+Networking               3 110110110 15-MAY-09                                  
+QA                      11 913323708 02-FEB-10                                  
+
+9 rows selected.
+
+SQL> spool off
